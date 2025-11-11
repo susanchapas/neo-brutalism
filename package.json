@@ -1,0 +1,52 @@
+{
+  "name": "neo-brutalist-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "test": "jest",
+    "axe": "node ./scripts/axe-check.js",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@axe-core/puppeteer": "latest",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "latest",
+    "@types/jest": "latest",
+    "@types/react": "19.2.3",
+    "axe-core": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "eslint-plugin-jsx-a11y": "latest",
+    "husky": "latest",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "latest",
+    "jest-axe": "^10.0.0",
+    "jest-environment-jsdom": "latest",
+    "lint-staged": "latest",
+    "prettier": "latest",
+    "puppeteer": "latest",
+    "typescript": "latest"
+  }
+}

@@ -1,0 +1,50 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--body-font);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper-white);
+  color: var(--foundation-black);
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--system-blue);
+}
+
+a:focus {
+  outline: 3px solid var(--digital-yellow);
+  outline-offset: 3px;
+}
+
+button {
+  font-family: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

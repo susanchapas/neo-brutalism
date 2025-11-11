@@ -1,0 +1,18 @@
+:root {
+  --foundation-black: #000000;
+  --paper-white: #ffffff;
+  --glitch-purple: #A300FF;
+  --digital-yellow: #FFEB00;
+  --warning-red: #FF004E;
+  --system-blue: #0050FF;
+  --status-green: #20FFB5;
+
+  --h1-font: 'Anton', system-ui, sans-serif;
+  --mono-font: 'Space Mono', monospace;
+  --body-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+
+  --border-thick: 4px solid var(--foundation-black);
+  --shadow-heavy: 5px 5px 0 var(--foundation-black);
+  --page-padding: 16px;
+  --max-width: 1100px;
+}
