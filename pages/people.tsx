@@ -10,23 +10,23 @@ const people = [
   {
     name: 'David Rudnick',
     role: 'Designer at Figma',
-    bio: 'Known for pushing the boundaries of design with raw, functional aesthetics.',
+    bio: 'Designer and typographic experimenter focused on raw UI systems and expressive interfaces.',
     image: '/placeholder.jpg',
     link: 'https://figma.com'
   },
   {
-    name: 'Anthony Rigatuso',
-    role: 'Designer',
-    bio: 'Advocate for brutalist design principles in modern interfaces.',
+    name: 'Le Corbusier',
+    role: 'Architect',
+    bio: 'Pioneering modernist architect whose emphasis on raw materials and functionalism helped shape Brutalist principles.',
     image: '/placeholder.jpg',
-    link: 'https://example.com'
+    link: 'https://en.wikipedia.org/wiki/Le_Corbusier'
   },
   {
-    name: 'Filippo Spiezia',
-    role: 'Designer',
-    bio: 'Explores the intersection of architecture and digital design.',
+    name: 'Wim Crouwel',
+    role: 'Graphic Designer',
+    bio: 'Dutch designer celebrated for grid-based, modular typography and rigorous modernist graphic systems.',
     image: '/placeholder.jpg',
-    link: 'https://example.com'
+    link: 'https://en.wikipedia.org/wiki/Wim_Crouwel'
   }
 ]
 
