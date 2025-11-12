@@ -33,13 +33,11 @@ export default function PersonProfile({ person, bgVar = '--status-green' }: Prop
 
   return (
     <article
-      className={cardStyles.neo_brutalist_card}
+      className={`${cardStyles.neo_brutalist_card} ${cardStyles.withPortrait}`}
       style={{
         backgroundColor: 'var(--paper-white)',
         color: textColor,
-        position: 'relative',
         paddingTop: '40px',
-        paddingLeft: '200px', /* make room for the overhanging portrait */
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -49,19 +47,10 @@ export default function PersonProfile({ person, bgVar = '--status-green' }: Prop
       aria-labelledby={`person-${person.name.replace(/\s+/g, '-')}`}
     >
       <img
+        className={cardStyles.portrait}
         src={encodeURI(currentImage)}
         alt={`Portrait of ${person.name}`}
-          style={{
-            position: 'absolute',
-            top: '-50px',
-            left: '24px',
-            width: '220px',
-            height: 'auto',
-            zIndex: 2,
-            border: 'var(--border-thick)',
-            display: 'block',
-            marginBottom: '12px',
-          }}
+        aria-hidden="true"
       />
       <h3 id={`person-${person.name.replace(/\s+/g, '-')}`}>{person.name}</h3>
       <p style={{ fontFamily: 'var(--mono-font)', margin: '6px 0' }}>{person.role}</p>
