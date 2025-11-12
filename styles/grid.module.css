@@ -45,10 +45,12 @@
 @media (min-width: 700px) {
   .peopleGrid {
     grid-template-columns: repeat(3, 1fr);
+    align-items: stretch; /* ensure cells stretch to equal height */
   }
 }
 
 /* Utility: ensure grid children stretch to full cell width */
 .gridItem {
   width: 100%;
+  display: flex; /* allow children (cards) to stretch to full column height */
 }
