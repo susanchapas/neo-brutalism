@@ -1,0 +1,6 @@
+.neo_brutalist_card {
+  border: 4px solid var(--foundation-black);
+  box-shadow: 10px 10px 0px var(--foundation-black); 
+  background-color: var(--paper-white);
+  padding: 24px; 
+}

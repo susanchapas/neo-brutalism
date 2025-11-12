@@ -1,3 +1,5 @@
+import cardStyles from '../styles/card.module.css'
+
 interface Person {
   name: string
   role: string
@@ -19,10 +21,8 @@ export default function PersonProfile({ person, bgVar = '--status-green' }: Prop
 
   return (
     <article
+      className={cardStyles.neo_brutalist_card}
       style={{
-        border: 'var(--border-thick)',
-        boxShadow: 'var(--shadow-heavy)',
-        padding: '16px',
         margin: '16px 0',
         backgroundColor: `var(${bgVar})`,
         color: textColor,

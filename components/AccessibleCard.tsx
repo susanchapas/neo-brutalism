@@ -1,3 +1,5 @@
+import cardStyles from '../styles/card.module.css'
+
 interface AccessibleCardProps {
   title: string
   description: string
@@ -17,10 +19,8 @@ export default function AccessibleCard({ title, description, link, bgVar }: Acce
     <article
       role="group"
       aria-labelledby={id}
+      className={cardStyles.neo_brutalist_card}
       style={{
-        border: 'var(--border-thick)',
-        boxShadow: 'var(--shadow-heavy)',
-        padding: '16px',
         margin: '16px 0',
         backgroundColor: `var(${pick})`,
         color: textColor,
