@@ -51,6 +51,14 @@ export default function People() {
         <div style={{ marginBottom: '48px' }}>
           <GlitchedHeader text="PEOPLE" />
         </div>
+
+        {/* short introductory blurb above the people cards */}
+        <div style={{ maxWidth: '900px', marginBottom: '32px', color: 'var(--foundation-black)' }}>
+          <p style={{ margin: 0 }}>
+            A selection of designers, architects, and thinkers who influenced the Neo‑Brutalism approach — advocates
+            of raw materials, strict grids, and direct, unapologetic design language.
+          </p>
+        </div>
         <section aria-labelledby="people-heading">
           <h2 id="people-heading" className="visually-hidden">People</h2>
           <ul className={gridStyles.peopleGrid}>
