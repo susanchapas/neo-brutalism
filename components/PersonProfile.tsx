@@ -23,7 +23,6 @@ export default function PersonProfile({ person, bgVar = '--status-green' }: Prop
     <article
       className={cardStyles.neo_brutalist_card}
       style={{
-        margin: '16px 0',
         backgroundColor: `var(${bgVar})`,
         color: textColor,
       }}

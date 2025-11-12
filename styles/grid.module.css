@@ -1,0 +1,54 @@
+/* Grid utilities for arranging cards responsively and accessibly */
+.grid {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Home: two cards side-by-side on medium+ screens */
+.homeGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 700px) {
+  .homeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* About: aims for up to 3 columns (so 2 rows of 3 on wide screens) */
+.aboutGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 700px) {
+  .aboutGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .aboutGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* People: a single row of 3 on wide screens */
+.peopleGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  list-style: none;
+  padding: 0;
+}
+@media (min-width: 700px) {
+  .peopleGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Utility: ensure grid children stretch to full cell width */
+.gridItem {
+  width: 100%;
+}

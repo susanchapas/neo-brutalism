@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PersonProfile from '../components/PersonProfile'
+import gridStyles from '../styles/grid.module.css'
 import typoStyles from '../styles/typography.module.css'
 import GlitchedHeader from '../components/GlitchedHeader'
 
@@ -41,13 +42,13 @@ export default function People() {
         <GlitchedHeader text="PEOPLE" />
         <section aria-labelledby="people-heading">
           <h2 id="people-heading" className="visually-hidden">People</h2>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
+          <ul className={gridStyles.peopleGrid}>
             {people.map((person, i) => {
               // cycle through a palette that keeps text readable
               const palette = ['--digital-yellow', '--status-green', '--system-blue']
               const bg = palette[i % palette.length]
               return (
-                <li key={person.name}>
+                <li key={person.name} className={gridStyles.gridItem}>
                   <PersonProfile person={person} bgVar={bg} />
                 </li>
               )

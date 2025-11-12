@@ -21,7 +21,6 @@ export default function AccessibleCard({ title, description, link, bgVar }: Acce
       aria-labelledby={id}
       className={cardStyles.neo_brutalist_card}
       style={{
-        margin: '16px 0',
         backgroundColor: `var(${pick})`,
         color: textColor,
       }}
