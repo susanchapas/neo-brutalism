@@ -24,8 +24,8 @@ export default function Home() {
         </p>
         <section>
           <h2>Sample Neo-Brutalist Sites</h2>
-          <AccessibleCard title="FIGMA - SITE SAMPLE" description="Figma is a collaborative interface design tool that embodies Neo-Brutalist principles in its raw, functional design." link="https://figma.com" />
-          <AccessibleCard title="GUMROAD - SITE SAMPLE" description="Gumroad is a platform for creators to sell digital products, featuring a direct, no-nonsense approach to e-commerce." link="https://gumroad.com" />
+          <AccessibleCard bgVar="--digital-yellow" title="FIGMA - SITE SAMPLE" description="Figma is a collaborative interface design tool that embodies Neo-Brutalist principles in its raw, functional design." link="https://figma.com" />
+          <AccessibleCard bgVar="--system-blue" title="GUMROAD - SITE SAMPLE" description="Gumroad is a platform for creators to sell digital products, featuring a direct, no-nonsense approach to e-commerce." link="https://gumroad.com" />
         </section>
       </main>
       <Footer />

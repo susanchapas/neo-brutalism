@@ -35,12 +35,21 @@ export default function People() {
         <meta name="description" content="Key figures in the Neo-Brutalism movement." />
       </Head>
       <Header />
-      <main id="main" style={{ padding: 'var(--page-padding)' }}>
+      <main id="main" style={{ padding: 'var(--page-padding)', minHeight: '100vh' }}>
         <h1>PEOPLE</h1>
         <section aria-labelledby="people-heading">
           <h2 id="people-heading" className="visually-hidden">People</h2>
           <ul style={{ listStyle: 'none', padding: 0 }}>
-            {people.map(person => <li key={person.name}><PersonProfile person={person} /></li>)}
+            {people.map((person, i) => {
+              // cycle through a palette that keeps text readable
+              const palette = ['--digital-yellow', '--status-green', '--system-blue']
+              const bg = palette[i % palette.length]
+              return (
+                <li key={person.name}>
+                  <PersonProfile person={person} bgVar={bg} />
+                </li>
+              )
+            })}
           </ul>
         </section>
       </main>
