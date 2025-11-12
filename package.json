@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
+    "export:docs": "next build && next export -o docs",
     "start": "next start -p 3000",
     "lint": "next lint",
     "format": "prettier --write .",
@@ -25,9 +26,9 @@
     ]
   },
   "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "^13.5.11",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@axe-core/puppeteer": "latest",
