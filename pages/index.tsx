@@ -5,6 +5,7 @@ import AccessibleCard from '../components/AccessibleCard'
 import { organizationJsonLd, websiteJsonLd } from '../utils/seo'
 import typoStyles from '../styles/typography.module.css'
 import gridStyles from '../styles/grid.module.css'
+import layoutStyles from '../styles/layout.module.css'
 import GlitchedHeader from '../components/GlitchedHeader'
 
 export default function Home() {
@@ -16,8 +17,8 @@ export default function Home() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       </Head>
-      <Header />
-      <main id="main" style={{ background: 'var(--paper-white)', color: 'var(--foundation-black)', minHeight: '100vh', padding: 'var(--page-padding)' }}>
+  <Header />
+  <main id="main" className={layoutStyles.layout} style={{ background: 'var(--paper-white)', color: 'var(--foundation-black)', minHeight: '100vh' }}>
         <GlitchedHeader text="EXPOSED STRUCTURE: WHAT IS NEO-BRUTALISM?" />
         <p style={{ fontFamily: 'var(--body-font)', fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '2rem' }}>
           Neo-Brutalism is the intentional collision of utilitarian structure (Brutalism's legacy) and the high-saturation friction of modern digital design. It rejects softness, shadows, and gradients in favor of thick borders, maximalist typography, and jarring color palettes.
