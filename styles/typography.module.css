@@ -1,8 +1,11 @@
 .main_header {
   color: var(--foundation-black);
-  font-size: 8rem; 
-  letter-spacing: -5px;
+  /* make the large header responsive and avoid heavy negative tracking that causes overlap */
+  font-size: clamp(3rem, 12vw, 8rem);
+  /* mild negative tracking to keep the brutalist compact look without collisions */
+  letter-spacing: -1px;
   font-family: var(--h1-font);
+  line-height: 0.95;
   text-transform: uppercase;
 }
 
