@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import cardStyles from '../styles/card.module.css'
 import typoStyles from '../styles/typography.module.css'
+import GlitchedHeader from '../components/GlitchedHeader'
 
 export default function About() {
   return (
@@ -13,7 +14,7 @@ export default function About() {
       </Head>
       <Header />
       <main id="main" style={{ padding: 'var(--page-padding)' }}>
-        <h1 className={typoStyles.main_header}>PROTOCOL DEFINITION: THE RULES OF NEO-BRUTALISM</h1>
+        <GlitchedHeader text="PROTOCOL DEFINITION: THE RULES OF NEO-BRUTALISM" />
         <section tabIndex={0} className={cardStyles.neo_brutalist_card} style={{ backgroundColor: 'var(--glitch-purple)', color: 'var(--paper-white)', margin: '16px 0' }}>
           <div className={typoStyles.subheader} style={{ marginBottom: '8px' }}>[COLORS]</div>
           <h2 className={typoStyles.subheader}>Colors</h2>

@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import TimelineScroller from '../components/TimelineScroller'
 import typoStyles from '../styles/typography.module.css'
+import GlitchedHeader from '../components/GlitchedHeader'
 
 export default function Timeline() {
   return (
@@ -13,7 +14,7 @@ export default function Timeline() {
       </Head>
       <Header />
       <main id="main" style={{ padding: 'var(--page-padding)' }}>
-        <h1 className={typoStyles.main_header}>TIMELINE</h1>
+        <GlitchedHeader text="TIMELINE" />
         <TimelineScroller />
       </main>
       <Footer />
