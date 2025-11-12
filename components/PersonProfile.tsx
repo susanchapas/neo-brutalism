@@ -15,15 +15,14 @@ type Props = {
 }
 
 export default function PersonProfile({ person, bgVar = '--status-green' }: Props) {
-  // pick a readable text color depending on the background choice
-  const darkBgNames = ['--system-blue', '--glitch-purple']
-  const textColor = darkBgNames.includes(bgVar) ? 'var(--paper-white)' : 'var(--foundation-black)'
+  // Force person cards to a white background and readable text for consistency
+  const textColor = 'var(--foundation-black)'
 
   return (
     <article
       className={cardStyles.neo_brutalist_card}
       style={{
-        backgroundColor: `var(${bgVar})`,
+        backgroundColor: 'var(--paper-white)',
         color: textColor,
       }}
       tabIndex={0}

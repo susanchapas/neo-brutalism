@@ -11,9 +11,8 @@ const defaultColors = ['--digital-yellow', '--glitch-purple', '--system-blue', '
 
 export default function AccessibleCard({ title, description, link, bgVar }: AccessibleCardProps) {
   const id = `card-${title.replace(/\s+/g, '-').toLowerCase()}`
-  const pick = bgVar || defaultColors[Math.floor(Math.random() * defaultColors.length)]
-  const darkBgNames = ['--system-blue', '--glitch-purple']
-  const textColor = darkBgNames.includes(pick) ? 'var(--paper-white)' : 'var(--foundation-black)'
+  // Force cards to use a white background site-wide while keeping text readable.
+  const textColor = 'var(--foundation-black)'
 
   return (
     <article
@@ -21,7 +20,7 @@ export default function AccessibleCard({ title, description, link, bgVar }: Acce
       aria-labelledby={id}
       className={cardStyles.neo_brutalist_card}
       style={{
-        backgroundColor: `var(${pick})`,
+        backgroundColor: 'var(--paper-white)',
         color: textColor,
       }}
       tabIndex={0}
