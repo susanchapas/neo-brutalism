@@ -51,17 +51,17 @@ export default function PersonProfile({ person, bgVar = '--status-green' }: Prop
       <img
         src={encodeURI(currentImage)}
         alt={`Portrait of ${person.name}`}
-        style={{
-          position: 'absolute',
-          top: '-40px',
-          left: '24px',
-          width: '160px',
-          height: 'auto',
-          zIndex: 2,
-          border: 'var(--border-thick)',
-          display: 'block',
-          marginBottom: '12px',
-        }}
+          style={{
+            position: 'absolute',
+            top: '-50px',
+            left: '24px',
+            width: '220px',
+            height: 'auto',
+            zIndex: 2,
+            border: 'var(--border-thick)',
+            display: 'block',
+            marginBottom: '12px',
+          }}
       />
       <h3 id={`person-${person.name.replace(/\s+/g, '-')}`}>{person.name}</h3>
       <p style={{ fontFamily: 'var(--mono-font)', margin: '6px 0' }}>{person.role}</p>
