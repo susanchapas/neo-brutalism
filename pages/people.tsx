@@ -11,24 +11,24 @@ const people = [
     name: 'David Rudnick',
     role: 'Designer at Figma',
     bio: 'Designer and typographic experimenter focused on raw UI systems and expressive interfaces.',
-    image: '/david rudnick bnw.svg',
-    imageHover: '/david rudnick on-hover.svg',
+    image: '/david-rudnick-bnw.svg',
+    imageHover: '/david-rudnick-on-hover.svg',
     link: 'https://figma.com'
   },
   {
     name: 'Le Corbusier',
     role: 'Architect',
     bio: 'Pioneering modernist architect whose emphasis on raw materials and functionalism helped shape Brutalist principles.',
-    image: '/Le Corbusier bnw.svg',
-    imageHover: '/Le Corbusier on-hover.svg',
+    image: '/le-corbusier-bnw.svg',
+    imageHover: '/le-corbusier-on-hover.svg',
     link: 'https://en.wikipedia.org/wiki/Le_Corbusier'
   },
   {
     name: 'Wim Crouwel',
     role: 'Graphic Designer',
     bio: 'Dutch designer celebrated for grid-based, modular typography and rigorous modernist graphic systems.',
-    image: '/Wim Crouwel bnw.svg',
-    imageHover: '/Wim Crouwel on-hover.svg',
+    image: '/wim-crouwel-bnw.svg',
+    imageHover: '/wim-crouwel-on-hover.svg',
     link: 'https://en.wikipedia.org/wiki/Wim_Crouwel'
   }
 ]

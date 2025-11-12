@@ -38,23 +38,26 @@ export default function PersonProfile({ person, bgVar = '--status-green' }: Prop
         backgroundColor: 'var(--paper-white)',
         color: textColor,
         position: 'relative',
-        paddingTop: '50px',
+        paddingTop: '40px',
+        paddingLeft: '200px', /* make room for the overhanging portrait */
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onFocus={handleMouseEnter}
+      onBlur={handleMouseLeave}
       tabIndex={0}
       aria-labelledby={`person-${person.name.replace(/\s+/g, '-')}`}
     >
       <img
-        src={currentImage}
+        src={encodeURI(currentImage)}
         alt={`Portrait of ${person.name}`}
         style={{
           position: 'absolute',
-          top: '-50px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '150px',
-          height: '150px',
+          top: '-40px',
+          left: '24px',
+          width: '160px',
+          height: 'auto',
+          zIndex: 2,
           border: 'var(--border-thick)',
           display: 'block',
           marginBottom: '12px',
