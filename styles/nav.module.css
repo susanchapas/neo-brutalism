@@ -1,0 +1,11 @@
+.nav_link {
+  color: var(--foundation-black); 
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  transition: none; 
+}
+
+.nav_link:hover {
+  color: var(--glitch-purple); 
+  border-bottom: 4px solid var(--digital-yellow);
+}
