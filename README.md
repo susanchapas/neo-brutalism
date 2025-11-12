@@ -82,3 +82,5 @@ Notes & recommendations:
 - Node / Next compatibility: this repository currently pins `next` to `^13.5.11` and `react`/`react-dom` to `18.2.0` so builds work with Node 18. If you upgrade to `next@latest` you may need Node >= 20.9.0.
 
 - Long-term (optional): consider switching to Next's `output: 'export'` in `next.config.js` instead of `next export`, since `next export` is deprecated for newer Next.js versions. If you want, I can update `next.config.js` and scripts to use that approach.
+
+# husky-hook-test

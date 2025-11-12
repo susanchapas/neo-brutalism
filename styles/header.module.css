@@ -1,7 +1,7 @@
 .header {
   position: sticky;
   top: 0;
-  background: var(--foundation-black);
+  background: var(--glitch-purple);
   color: var(--paper-white);
   padding: var(--page-padding);
   border-bottom: var(--border-thick);

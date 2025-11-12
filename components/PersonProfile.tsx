@@ -8,7 +8,7 @@ interface Person {
 
 export default function PersonProfile({ person }: { person: Person }) {
   return (
-    <article style={{ border: 'var(--border-thick)', boxShadow: 'var(--shadow-heavy)', padding: '16px', margin: '16px 0' }}>
+    <article style={{ border: 'var(--border-thick)', boxShadow: 'var(--shadow-heavy)', padding: '16px', margin: '16px 0', backgroundColor: 'var(--warning-red)', color: 'var(--paper-white)' }}>
       <img src={person.image} alt={`Portrait of ${person.name}`} style={{ width: '100px', height: '100px', border: 'var(--border-thick)' }} />
       <h3>{person.name}</h3>
       <p style={{ fontFamily: 'var(--mono-font)' }}>{person.role}</p>
