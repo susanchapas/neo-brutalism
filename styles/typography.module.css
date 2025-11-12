@@ -1,0 +1,13 @@
+.main_header {
+  color: var(--foundation-black);
+  font-size: 8rem; 
+  letter-spacing: -5px;
+  font-family: var(--h1-font);
+  text-transform: uppercase;
+}
+
+.subheader {
+  color: var(--glitch-purple);
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+}

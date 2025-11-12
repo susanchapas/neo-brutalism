@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PersonProfile from '../components/PersonProfile'
+import typoStyles from '../styles/typography.module.css'
 
 const people = [
   {
@@ -36,7 +37,7 @@ export default function People() {
       </Head>
       <Header />
       <main id="main" style={{ padding: 'var(--page-padding)', minHeight: '100vh' }}>
-        <h1>PEOPLE</h1>
+        <h1 className={typoStyles.main_header}>PEOPLE</h1>
         <section aria-labelledby="people-heading">
           <h2 id="people-heading" className="visually-hidden">People</h2>
           <ul style={{ listStyle: 'none', padding: 0 }}>
