@@ -24,17 +24,17 @@
   /* anchor the portrait to the bottom edge of the card so all portraits
      share a consistent baseline regardless of their intrinsic height */
   bottom: 0;
-  /* give the portrait a fixed display box and pull it upward so the
-    visible artwork hangs over the top of the card. We keep the card's
-    left padding large enough (see .withPortrait) so text never sits
-    underneath the portrait. */
+  /* give the portrait a fixed display box that is taller than the
+    card content; by anchoring the box's bottom to the card and using
+    object-position: bottom, the visible artwork's bottom aligns with
+    the card baseline while the box top naturally extends above the
+    card (creating the overhang). No translate is used so the bottom
+    alignment remains strict. */
   width: 220px;
-  height: 340px; /* taller box so the image can extend above the card */
-  transform: translateY(-72px); /* lift the portrait up so it overhangs */
+  height: 420px; /* taller box so the image can extend above the card while bottom stays aligned */
   object-fit: contain;
   object-position: bottom left;
   z-index: 3;
-  z-index: 2;
   border: none; /* remove the black box outline */
   display: block;
   pointer-events: none; /* don't let the image block text links */
@@ -48,8 +48,7 @@
   }
   .portrait {
     width: 140px;
-    height: 220px;
+    height: 300px;
     left: 16px;
-    transform: translateY(-44px);
   }
 }
