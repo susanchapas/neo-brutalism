@@ -14,8 +14,14 @@
 /* When a card has a portrait that sits to the left and overhangs vertically */
 .withPortrait {
   position: relative;
-  /* keep the text clear of the portrait: portrait width (220px) + 40px gutter */
-  padding-left: calc(220px + 40px);
+  /* keep the text clear of the portrait. Uses CSS variables so the
+     portrait can be scaled without breaking the text flow. --svg-scale
+     controls how much taller the SVG/image should appear (1 = 100%). */
+  --svg-scale: 1.2; /* default scale (120%) - change this to enlarge/shrink portraits */
+  --portrait-width: 220px;
+  padding-left: calc(var(--portrait-width) * var(--svg-scale) + 40px);
+  /* the card itself remains the layout anchor while the portrait is
+     absolutely positioned and allowed to visually overflow */
 }
 
 .portrait {
@@ -30,12 +36,19 @@
     the card baseline while the box top naturally extends above the
     card (creating the overhang). No translate is used so the bottom
     alignment remains strict. */
-  width: 220px;
-  height: 420px; /* taller box so the image can extend above the card while bottom stays aligned */
+  /* base display box for the portrait. We keep a base width/height and
+     then scale the rendered artwork using transform so it becomes taller
+     than the card while its bottom edge stays aligned. transform-origin
+     is bottom left to preserve the bottom alignment when scaling. */
+  width: var(--portrait-width);
+  height: 420px; /* base box height before scaling */
   object-fit: contain;
   object-position: bottom left;
+  transform-origin: bottom left;
+  transform: scale(var(--svg-scale));
   z-index: 3;
-  border: none; /* remove the black box outline */
+  border: 4px solid #FF004E;
+  border-bottom: none;
   display: block;
   pointer-events: none; /* don't let the image block text links */
 }
@@ -43,11 +56,12 @@
 /* Responsive: reduce portrait size and left padding on narrow viewports */
 @media (max-width: 640px) {
   .withPortrait {
-    padding-left: calc(140px + 24px);
+    --portrait-width: 140px;
+    padding-left: calc(var(--portrait-width) * var(--svg-scale) + 24px);
     padding-top: 36px;
   }
   .portrait {
-    width: 140px;
+    width: var(--portrait-width);
     height: 300px;
     left: 16px;
   }
