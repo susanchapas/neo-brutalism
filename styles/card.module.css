@@ -2,11 +2,12 @@
   border: 4px solid var(--foundation-black);
   box-shadow: 10px 10px 0px var(--foundation-black); 
   background-color: var(--paper-white);
-  padding: 24px; 
+  /* increase internal padding so card content breathes more */
+  padding: 40px; 
   box-sizing: border-box;
   width: 100%;
   /* add outer margin so cards are not tightly packed in grid/list layouts */
-  margin: 12px 0;
+  margin: 32px 0;
   display: flex;
   flex-direction: column;
   height: 100%; /* fill the grid cell so cards are uniform */
@@ -58,6 +59,6 @@
 /* Slightly larger gaps on wider viewports so cards breathe on desktop */
 @media (min-width: 1024px) {
   .neo_brutalist_card {
-    margin: 20px 0;
+    margin: 40px 0;
   }
 }
