@@ -24,15 +24,16 @@
   /* anchor the portrait to the bottom edge of the card so all portraits
      share a consistent baseline regardless of their intrinsic height */
   bottom: 0;
-  /* give the portrait a fixed display box so we can use object-fit to
-     align the visible image content to the bottom of that box. This
-     normalizes different SVG or raster viewBoxes that include extra
-     whitespace and ensures a consistent baseline. */
+  /* give the portrait a fixed display box and pull it upward so the
+    visible artwork hangs over the top of the card. We keep the card's
+    left padding large enough (see .withPortrait) so text never sits
+    underneath the portrait. */
   width: 220px;
-  height: 260px;
-  transform: none;
+  height: 340px; /* taller box so the image can extend above the card */
+  transform: translateY(-72px); /* lift the portrait up so it overhangs */
   object-fit: contain;
   object-position: bottom left;
+  z-index: 3;
   z-index: 2;
   border: none; /* remove the black box outline */
   display: block;
@@ -47,8 +48,8 @@
   }
   .portrait {
     width: 140px;
-    height: 180px;
+    height: 220px;
     left: 16px;
-    transform: none;
+    transform: translateY(-44px);
   }
 }
