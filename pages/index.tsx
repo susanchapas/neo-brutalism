@@ -30,25 +30,8 @@ export default function Home() {
         <section>
           <h2 className={typoStyles.subheader}>Sample Neo-Brutalist Sites</h2>
           <div className={gridStyles.homeGrid}>
-            <AccessibleCard
-              bgVar="--digital-yellow"
-              title="FIGMA - SITE SAMPLE"
-              description="Figma is a collaborative interface design tool that embodies Neo-Brutalist principles in its raw, functional design."
-              link="https://figma.com"
-              imageSrc={'/docs/Figma%20Lockup.svg'}
-              imageAlt={'Figma lockup'}
-              showOnHover={true}
-            />
-            <AccessibleCard
-              bgVar="--system-blue"
-              title="GUMROAD - SITE SAMPLE"
-              description="Gumroad is a platform for creators to sell digital products, featuring a direct, no-nonsense approach to e-commerce."
-              link="https://gumroad.com"
-              imageSrc={'/docs/Gumroad_idrI7kdZer_0.svg'}
-              imageAlt={'Gumroad lockup'}
-              imageColor={'#FF90E8'}
-              showOnHover={true}
-            />
+            <AccessibleCard bgVar="--digital-yellow" title="FIGMA - SITE SAMPLE" description="Figma is a collaborative interface design tool that embodies Neo-Brutalist principles in its raw, functional design." link="https://figma.com" />
+            <AccessibleCard bgVar="--system-blue" title="GUMROAD - SITE SAMPLE" description="Gumroad is a platform for creators to sell digital products, featuring a direct, no-nonsense approach to e-commerce." link="https://gumroad.com" />
           </div>
         </section>
       </main>

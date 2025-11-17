@@ -13,12 +13,6 @@
   overflow: visible; /* allow portrait overhang to show */
 }
 
-/* Make cards feel closer to square by constraining their aspect ratio and max width */
-.neo_brutalist_card {
-  aspect-ratio: 1.6 / 1; /* slightly wide but closer to square than full-width strips */
-  max-width: 900px;
-}
-
 /* When a card has a portrait that sits to the left and overhangs vertically */
 .withPortrait {
   position: relative;
@@ -47,69 +41,6 @@
   display: block;
   pointer-events: none; /* don't let the image block text links */
 }
-
-/* New layout: show an image by default and reveal textual content on hover/focus */
-.cardMediaWrap {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  flex: 1 1 auto;
-}
-
-.cardImage,
-.cardInner {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  box-sizing: border-box;
-  transition: opacity 220ms ease, transform 220ms ease;
-}
-
-.cardImage img,
-.cardImage svg {
-  max-width: 64%;
-  max-height: 64%;
-  height: auto;
-}
-
-/* If an SVG has been inlined, force its fills/strokes to follow the current color so consumers
-   can recolor via the wrapper's `color` style (used for the Gumroad pink). */
-.inlined-svg svg,
-.inlined-svg svg * {
-  fill: currentColor !important;
-  stroke: currentColor !important;
-}
-
-/* content (title/description/link) sits on top but starts hidden visually */
-.cardInner {
-  flex-direction: column;
-  text-align: left;
-  align-items: flex-start;
-  background: transparent;
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* When card is hovered or focused, hide image and show content */
-.neo_brutalist_card:hover .cardImage,
-.neo_brutalist_card:focus-within .cardImage {
-  opacity: 0;
-  transform: scale(0.98);
-  pointer-events: none;
-}
-.neo_brutalist_card:hover .cardInner,
-.neo_brutalist_card:focus-within .cardInner {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Ensure content is readable and accessible even when visually hidden initially
-   by keeping it in the DOM; keyboard users who focus the card will reveal it. */
-
 
 /* Responsive: reduce portrait size and left padding on narrow viewports */
 @media (max-width: 640px) {
