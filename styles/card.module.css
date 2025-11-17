@@ -65,6 +65,9 @@
     aspect-ratio: auto;
     min-height: 0;
     padding: 14px;
+    /* Prevent card overhangs (portraits / shadows) from overlapping footer on small screens */
+    overflow: hidden;
+    box-shadow: 6px 6px 0px var(--foundation-black);
   }
 }
 
