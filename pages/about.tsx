@@ -34,7 +34,7 @@ const accordionData = [
 ];
 
 const AccordionItem = ({ title, content, isOpen, onClick }: { title: string, content: string, isOpen: boolean, onClick: () => void }) => (
-  <div style={{ gridColumn: 'span 1' }}>
+  <div className={aboutStyles.accordionItem}>
     <button
       aria-expanded={isOpen}
       className={`${aboutStyles.accordionButton} ${isOpen ? aboutStyles.active : ''}`}
@@ -66,19 +66,23 @@ export default function About() {
       <Header />
       <main id="main">
         <GlitchedHeader text="PROTOCOL DEFINITION: THE RULES OF NEO-BRUTALISM" />
-        <div className={aboutStyles.dashboard}>
-          <div className={aboutStyles.blurb}>
-            <p>This page outlines the core principles of Neo-Brutalism, a design philosophy that prioritizes raw functionality, unapologetic aesthetics, and a rejection of minimalist trends. The following sections define the rules for color, layout, typography, and more.</p>
+
+        <div className={aboutStyles.overview}>
+          <p>This page outlines the core principles of Neo-Brutalism, a design philosophy that prioritizes raw functionality, unapologetic aesthetics, and a rejection of minimalist trends. The following sections define the rules for color, layout, typography, and more.</p>
+        </div>
+
+        <div className={aboutStyles.centered}>
+          <div className={aboutStyles.dashboard}>
+            {accordionData.map((item, index) => (
+              <AccordionItem
+                key={index}
+                title={item.title}
+                content={item.content}
+                isOpen={openIndex === index}
+                onClick={() => handleClick(index)}
+              />
+            ))}
           </div>
-          {accordionData.map((item, index) => (
-            <AccordionItem
-              key={index}
-              title={item.title}
-              content={item.content}
-              isOpen={openIndex === index}
-              onClick={() => handleClick(index)}
-            />
-          ))}
         </div>
       </main>
       <Footer />
