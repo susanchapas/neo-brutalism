@@ -64,9 +64,12 @@ export default function TimelineScroller() {
 						}`}
 					>
 						<div className={timelineStyles.timeline_dot}></div>
-						<div
+						<button
+							type="button"
 							className={timelineStyles.timeline_item_content}
 							onClick={() => handleCardClick(index)}
+							aria-expanded={expandedIndex === index}
+							aria-controls={`expanded-${index}`}
 						>
 							<article
 								className={`${cardStyles.neo_brutalist_card} ${
@@ -88,7 +91,10 @@ export default function TimelineScroller() {
 								<h3>{item.title}</h3>
 								<p>{item.description}</p>
 								{expandedIndex === index && (
-									<div className={timelineStyles.expanded_content}>
+									<div
+										id={`expanded-${index}`}
+										className={timelineStyles.expanded_content}
+									>
 										<Image
 											src={item.image}
 											alt={item.title}
@@ -106,7 +112,7 @@ export default function TimelineScroller() {
 									</div>
 								)}
 							</article>
-						</div>
+						</button>
 					</div>
 				))}
 			</div>
