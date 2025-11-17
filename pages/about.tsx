@@ -43,7 +43,9 @@ const AccordionItem = ({ title, content, isOpen, onClick }: { title: string, con
       {title}
     </button>
     <div className={`${aboutStyles.accordionPanel} ${isOpen ? aboutStyles.show : ''}`}>
-      <p>{content}</p>
+      <div className={aboutStyles.contentContainer}>
+        <p>{content}</p>
+      </div>
     </div>
   </div>
 );
@@ -65,6 +67,9 @@ export default function About() {
       <main id="main">
         <GlitchedHeader text="PROTOCOL DEFINITION: THE RULES OF NEO-BRUTALISM" />
         <div className={aboutStyles.dashboard}>
+          <div className={aboutStyles.blurb}>
+            <p>This page outlines the core principles of Neo-Brutalism, a design philosophy that prioritizes raw functionality, unapologetic aesthetics, and a rejection of minimalist trends. The following sections define the rules for color, layout, typography, and more.</p>
+          </div>
           {accordionData.map((item, index) => (
             <AccordionItem
               key={index}
