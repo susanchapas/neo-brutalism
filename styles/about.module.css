@@ -28,10 +28,6 @@
 .accordionItem {
   /* Each accordion item sits in the grid; spacing controlled via grid gap */
   padding: 0;
-  position: relative; /* container for absolutely positioned panel */
-  /* reserve space so panel can expand without shifting layout */
-  --panel-reserved-height: 220px;
-  padding-bottom: var(--panel-reserved-height);
 }
 
 .accordionButton {
@@ -57,51 +53,27 @@
 }
 
 .accordionPanel {
-  padding: 0 16px;
+  padding: 0;
   background-color: var(--paper-white);
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.28s ease-out, opacity 0.2s ease-out;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
   border-left: 4px solid var(--foundation-black);
   border-right: 4px solid var(--foundation-black);
-  position: absolute; /* overlay inside reserved area */
-  left: 0;
-  right: 0;
-  top: calc(100% + 0.6rem);
-  z-index: 5;
-  opacity: 0;
-  pointer-events: none;
+  margin-top: 0; /* keep panels visually separated from buttons */
+  position: relative;
+  z-index: 0;
+  grid-column: 1 / -1; /* Panel spans both columns */
 }
 
 .accordionPanel.show {
-  max-height: var(--panel-max-height, 420px); /* Adjust as needed */
-  padding: 16px 16px 24px 16px;
+  max-height: 500px; /* Adjust as needed */
+  padding: 24px 0;
   border-bottom: 4px solid var(--foundation-black);
-  opacity: 1;
-  pointer-events: auto;
-  overflow: auto;
 }
 
 .contentContainer {
   max-width: 80ch;
   margin: 0 auto;
   padding: 0 24px;
-}
-
-@media (max-width: 767px) {
-  .accordionItem {
-    --panel-reserved-height: 180px;
-  }
-  .accordionPanel.show {
-    --panel-max-height: 260px;
-  }
-}
-
-@media (min-width: 768px) {
-  .accordionItem {
-    --panel-reserved-height: 260px;
-  }
-  .accordionPanel.show {
-    --panel-max-height: 420px;
-  }
 }
