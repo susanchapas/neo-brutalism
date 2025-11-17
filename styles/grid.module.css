@@ -8,12 +8,14 @@
 /* Home: two cards side-by-side on medium+ screens */
 .homeGrid {
   display: grid;
-  gap: 1rem;
+  gap: 2rem; /* larger gap so cards breathe and show padding between them */
   grid-template-columns: 1fr;
 }
 @media (min-width: 700px) {
   .homeGrid {
-    grid-template-columns: repeat(2, 1fr);
+    /* make columns a bit narrower than full width so cards feel more like blocks
+       and leave extra gutter between them (closer to square on wide screens) */
+    grid-template-columns: repeat(2, minmax(240px, 48%));
   }
 }
 
