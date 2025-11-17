@@ -5,27 +5,32 @@ const timelineItems = [
 	{
 		date: '1950s-1960s',
 		title: 'Brutalist Architecture Origins',
-		description: 'Concrete structures emphasizing raw materials and functionality.',
+		description:
+			'Emerging from post-war modernism, this architectural style embraced raw, exposed concrete (béton brut), massive forms, and a stark, functionalist approach. It valued honesty of materials over ornamentation.',
 	},
 	{
 		date: '1980s-1990s',
 		title: 'Swiss Typography Influence',
-		description: 'Grid-based, sans-serif typography principles.',
+		description:
+			'The International Typographic Style, with its clean, grid-based layouts and sans-serif fonts like Helvetica, brought a sense of order and objectivity that contrasts with and informs neo-brutalism\'s structured chaos.',
 	},
 	{
 		date: '1990s-2000s',
 		title: 'Early Web and Browser Defaults',
-		description: 'Times New Roman and basic HTML layouts.',
+		description:
+			'A raw, unstyled digital landscape defined by Times New Roman, blue hyperlinks, and basic HTML tables. This era\'s unpolished, "anything goes" aesthetic is a key spiritual predecessor to neo-brutalism.',
 	},
 	{
 		date: '2010s',
 		title: 'Skeuomorphism to Flat Design',
-		description: 'Transition from realistic to abstract UI elements.',
+		description:
+			'The design world swung from hyper-realistic interfaces to minimalist, two-dimensional styles. Neo-brutalism reacts to the perceived sterility of flat design by reintroducing texture, weight, and a raw, handmade feel.',
 	},
 	{
 		date: '2020s',
 		title: 'Rise of Figma and Gumroad',
-		description: 'Tools enabling raw, unpolished design expressions.',
+		description:
+			'Platforms like Figma and Gumroad empower creators with direct-to-audience tools, fostering a design ethos that is raw, functional, and unapologetic. Their bold typography and high-contrast UIs are hallmarks of modern neo-brutalism.',
 	},
 ];
 
