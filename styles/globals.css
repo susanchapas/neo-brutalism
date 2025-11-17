@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--paper-white);
+  background: radial-gradient(circle, var(--glitch-purple) 0%, var(--paper-white) 70%);
   color: var(--foundation-black);
 }
 
