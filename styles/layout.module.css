@@ -31,8 +31,7 @@
 
 /* Ensure main content leaves space for footer on small viewports so pronounced
    card shadows and overhangs do not visually collide with the footer. */
-@media (max-width: 700px) {
-  .layout {
-    padding-bottom: 4rem;
-  }
-}
+/* Use responsive spacing on the `homeGrid` instead of forcing a global layout
+   bottom padding. This avoids large empty gaps on desktop while preserving
+   a mobile buffer when cards have overhangs. */
+/* (The actual responsive margin is applied in `styles/grid.module.css`.) */

@@ -20,7 +20,7 @@ export default function Home() {
       <Header />
       {/* Full-bleed hero background with constrained headline */}
       <GlitchedHeader text="EXPOSED STRUCTURE: WHAT IS NEO-BRUTALISM?" />
-      <main id="main" className={layoutStyles.layout} style={{ background: 'var(--paper-white)', color: 'var(--foundation-black)', minHeight: '100vh' }}>
+      <main id="main" className={layoutStyles.layout} style={{ background: 'var(--paper-white)', color: 'var(--foundation-black)' }}>
         <p style={{ fontFamily: 'var(--body-font)', fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '2rem' }}>
           Neo-Brutalism is the intentional collision of utilitarian structure (Brutalism's legacy) and the high-saturation friction of modern digital design. It rejects softness, shadows, and gradients in favor of thick borders, maximalist typography, and jarring color palettes.
         </p>
