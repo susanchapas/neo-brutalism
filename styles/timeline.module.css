@@ -21,6 +21,18 @@
   position: relative;
 }
 
+/* Dynamic center line that spans the full timeline height */
+.timeline_wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: var(--foundation-black);
+}
+
 .timeline_item {
   padding: 20px 0;
   width: 50%;
@@ -62,7 +74,7 @@
 }
 
 .right .timeline_dot {
-  left: -14px;
+  left: -12px;
 }
 
 .timeline_item_content {
@@ -81,6 +93,25 @@
   animation: fadeIn 0.3s ease-out;
 }
 
+/* Horizontal connectors from cards to the center line */
+.timeline_item::after {
+  content: '';
+  position: absolute;
+  top: 42px;
+  height: 4px;
+  background: var(--foundation-black);
+}
+
+.timeline_item.left::after {
+  right: 0;
+  width: 40px;
+}
+
+.timeline_item.right::after {
+  left: 0;
+  width: 40px;
+}
+
 .pull_quote {
   font-family: var(--mono-font);
   font-size: 1.2rem;
@@ -96,8 +127,9 @@
     padding: 40px 0;
   }
 
+  /* Keep the line visible on mobile but make spacing simpler */
   .timeline_wrapper::before {
-    display: none; /* Hide SVG on mobile for a simpler layout */
+    left: 20px;
   }
 
   .timeline_item,
@@ -109,6 +141,13 @@
   }
 
   .timeline_dot {
-    display: none; /* Hide dots on mobile */
+    left: 8px;
+  }
+
+  .timeline_item::after,
+  .timeline_item.left::after,
+  .timeline_item.right::after {
+    left: 28px;
+    width: 24px;
   }
 }

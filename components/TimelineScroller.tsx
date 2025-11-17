@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import cardStyles from '../styles/card.module.css';
 import timelineStyles from '../styles/timeline.module.css';
-import WindingPath from './WindingPath';
 
 const timelineItems = [
 	{
@@ -56,7 +55,6 @@ export default function TimelineScroller() {
 
 	return (
 		<div className={timelineStyles.timeline_container}>
-			<WindingPath />
 			<div className={timelineStyles.timeline_wrapper}>
 				{timelineItems.map((item, index) => (
 					<div
