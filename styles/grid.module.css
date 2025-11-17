@@ -54,8 +54,25 @@
   }
 }
 
+/* Container used on the people page to clip visual overhangs (portraits, shadows)
+   while avoiding horizontal page scrolling. Keeps content accessible while
+   preventing decorative overflow from creating a horizontal scrollbar. */
+.peopleContainer {
+  /* clip wide decorative elements so they don't force horizontal scroll */
+  overflow-x: hidden;
+  /* Ensure the container respects the page's box sizing */
+  box-sizing: border-box;
+}
+
 /* Utility: ensure grid children stretch to full cell width */
 .gridItem {
   width: 100%;
   display: flex; /* allow children (cards) to stretch to full column height */
+}
+
+/* Allow grid children to shrink below their content width so long text or
+   decorative elements won't force the grid to overflow the viewport. */
+.gridItem,
+.peopleGrid > li {
+  min-width: 0;
 }

@@ -61,7 +61,8 @@ export default function People() {
         </div>
         <section aria-labelledby="people-heading">
           <h2 id="people-heading" className="visually-hidden">People</h2>
-          <ul className={gridStyles.peopleGrid}>
+          <div className={gridStyles.peopleContainer}>
+            <ul className={gridStyles.peopleGrid}>
             {people.map((person, i) => {
               // cycle through a palette that keeps text readable
               const palette = ['--digital-yellow', '--status-green', '--system-blue']
@@ -72,7 +73,8 @@ export default function People() {
                 </li>
               )
             })}
-          </ul>
+            </ul>
+          </div>
         </section>
       </main>
       <Footer />
