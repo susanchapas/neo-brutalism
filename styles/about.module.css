@@ -1,87 +1,71 @@
-.container {
-  position: relative;
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: var(--page-padding);
-  overflow: hidden;
 }
 
-.section {
-  padding: 2rem;
+.accordionButton {
+  background-color: var(--paper-white);
+  color: var(--foundation-black);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
   border: 4px solid var(--foundation-black);
-  box-shadow: 10px 10px 0px var(--foundation-black);
-  margin-bottom: 4rem;
-  background: var(--paper-white);
+  box-shadow: 5px 5px 0px var(--foundation-black);
+  text-align: left;
+  outline: none;
+  font-size: 1.5rem;
+  transition: 0.4s;
+  font-family: var(--font-anton);
+  text-transform: uppercase;
+}
+
+.active, .accordionButton:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px var(--foundation-black);
+}
+
+.accordionPanel {
+  padding: 0 24px;
+  background-color: var(--paper-white);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  border-left: 4px solid var(--foundation-black);
+  border-right: 4px solid var(--foundation-black);
+  margin-top: -1rem; /* Connects panel to the button */
   position: relative;
+  z-index: -1;
+}
+
+.accordionPanel.show {
+  max-height: 500px; /* Adjust as needed */
+  padding: 24px;
+  border-bottom: 4px solid var(--foundation-black);
 }
 
 .colors {
   background-color: var(--glitch-purple);
   color: var(--paper-white);
-  transform: rotate(-2deg);
-  z-index: 1;
-  margin-left: -20px;
-  margin-right: 20px;
 }
-
 .layout {
   background-color: var(--digital-yellow);
   color: var(--foundation-black);
-  margin-top: -3rem;
-  margin-left: 20px;
-  margin-right: -20px;
-  z-index: 2;
-  transform: rotate(1deg);
 }
-
 .typography {
   background-color: var(--system-blue);
   color: var(--paper-white);
-  margin-top: -2rem;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  transform: rotate(-1deg);
-  z-index: 3;
 }
-
 .components {
   background-color: var(--warning-red);
   color: var(--paper-white);
-  margin-top: -4rem;
-  width: 90%;
-  transform: rotate(2deg);
-  z-index: 4;
 }
-
 .verbiage {
   background-color: var(--status-green);
   color: var(--foundation-black);
-  margin-top: -3rem;
-  margin-left: 5%;
-  width: 90%;
-  transform: rotate(-0.5deg);
-  z-index: 5;
 }
-
 .style {
   background-color: var(--paper-white);
   color: var(--foundation-black);
-  margin-top: -2rem;
-  width: 95%;
-  margin-left: auto;
-  transform: rotate(0.5deg);
-  z-index: 6;
-}
-
-@media (max-width: 768px) {
-  .section {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
-    transform: none !important;
-  }
-
-  .colors, .layout, .typography, .components, .verbiage, .style {
-    margin-top: 0;
-    margin-bottom: 2rem;
-  }
 }
