@@ -32,10 +32,14 @@ const timelineItems = [
 export default function TimelineScroller() {
 	return (
 		<div className={timelineStyles.timeline_container}>
-			<div className={timelineStyles.timeline_line}></div>
 			<div className={timelineStyles.timeline_wrapper}>
 				{timelineItems.map((item, index) => (
-					<div key={index} className={timelineStyles.timeline_item}>
+					<div
+						key={index}
+						className={`${timelineStyles.timeline_item} ${
+							index % 2 === 0 ? timelineStyles.left : timelineStyles.right
+						}`}
+					>
 						<div className={timelineStyles.timeline_dot}></div>
 						<div className={timelineStyles.timeline_item_content}>
 							<article
