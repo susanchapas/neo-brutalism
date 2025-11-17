@@ -8,12 +8,15 @@
 /* Home: two cards side-by-side on medium+ screens */
 .homeGrid {
   display: grid;
-  gap: 1rem;
+  gap: 2.5rem; /* more breathing room between cards */
   grid-template-columns: 1fr;
 }
 @media (min-width: 700px) {
   .homeGrid {
-    grid-template-columns: repeat(2, 1fr);
+    /* make the two columns narrower than full width so cards look more like blocks
+       and create a larger gutter between them for a squarer appearance */
+    grid-template-columns: repeat(2, minmax(260px, 46%));
+    justify-content: center;
   }
 }
 
