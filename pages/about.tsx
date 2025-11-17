@@ -33,22 +33,26 @@ const accordionData = [
   }
 ];
 
-const AccordionItem = ({ title, content, isOpen, onClick }: { title: string, content: string, isOpen: boolean, onClick: () => void }) => (
-  <div className={aboutStyles.accordionItem}>
-    <button
-      aria-expanded={isOpen}
-      className={`${aboutStyles.accordionButton} ${isOpen ? aboutStyles.active : ''}`}
-      onClick={onClick}
-    >
-      {title}
-    </button>
-    <div className={`${aboutStyles.accordionPanel} ${isOpen ? aboutStyles.show : ''}`}>
-      <div className={aboutStyles.contentContainer}>
-        <p>{content}</p>
+const AccordionItem = ({ title, content, isOpen, onClick, index }: { title: string, content: string, isOpen: boolean, onClick: () => void, index: number }) => {
+  const panelId = `about-panel-${index}`;
+  return (
+    <div className={aboutStyles.accordionItem}>
+      <button
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        className={`${aboutStyles.accordionButton} ${isOpen ? aboutStyles.active : ''}`}
+        onClick={onClick}
+      >
+        {title}
+      </button>
+      <div id={panelId} role="region" aria-hidden={!isOpen} className={`${aboutStyles.accordionPanel} ${isOpen ? aboutStyles.show : ''}`}>
+        <div className={aboutStyles.contentContainer}>
+          <p>{content}</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default function About() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -76,6 +80,7 @@ export default function About() {
             {accordionData.map((item, index) => (
               <AccordionItem
                 key={index}
+                index={index}
                 title={item.title}
                 content={item.content}
                 isOpen={openIndex === index}
