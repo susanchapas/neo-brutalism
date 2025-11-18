@@ -49,8 +49,16 @@
 }
 @media (min-width: 700px) {
   .peopleGrid {
-    grid-template-columns: repeat(3, 1fr);
+    /* Use a responsive, content-friendly layout: allow as many columns
+       as will fit while enforcing a sensible minimum card width so
+       portraits and left padding won't force overflow. Center and
+       constrain the grid so cards have breathing room on wide viewports. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(1rem, 2.5vw, 2rem);
     align-items: stretch; /* ensure cells stretch to equal height */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
 
@@ -58,4 +66,12 @@
 .gridItem {
   width: 100%;
   display: flex; /* allow children (cards) to stretch to full column height */
+}
+
+/* Prevent grid/flex children from growing the column beyond the grid
+   container's available width. This is the standard fix for unexpected
+   horizontal scrolling when children have long content or reserved
+   space (portraits, padding, etc.). */
+.gridItem {
+  min-width: 0;
 }
