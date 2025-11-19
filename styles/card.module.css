@@ -1,72 +1,62 @@
 .neo_brutalist_card {
   border: 4px solid var(--foundation-black);
-  box-shadow: 10px 10px 0px var(--foundation-black); 
+  box-shadow: 10px 10px 0px var(--foundation-black);
   background-color: var(--paper-white);
-  padding: 18px; 
+  padding: 18px;
   box-sizing: border-box;
   width: 100%;
-  /* add outer margin so cards are not tightly packed in grid/list layouts */
   margin: 12px 0;
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* fill the grid cell so cards are uniform */
-    /* make cards much shorter: wider relative to height so the visible
-      card area is reduced (approx one-third of previous height) */
-    aspect-ratio: 3 / 1;
-    min-height: 100px;
-  overflow: visible; /* allow portrait overhang to show */
+  /* Use CSS Grid for the card so a portrait column and content column
+     can coexist without absolute positioning. This keeps cards naturally
+     sized to their content (no clipping) and prevents visual overlap. */
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  align-items: end; /* anchor portrait to the content baseline */
+  height: auto; /* allow the card to grow with its content */
+  min-height: 100px;
+  overflow: visible;
 }
 
 /* When a card has a portrait that sits to the left and overhangs vertically */
 .withPortrait {
-  position: relative;
-  /* keep the text clear of the portrait: portrait width (220px) + 40px gutter */
-  padding-left: calc(220px + 40px);
+  /* kept as a semantic helper class. The visual layout is handled by
+     the card grid; no extra padding is required when using the grid. */
 }
 
 .portrait {
-  position: absolute;
-  left: 24px;
-  /* anchor the portrait to the bottom edge of the card so all portraits
-     share a consistent baseline regardless of their intrinsic height */
-  bottom: 0;
-  /* give the portrait a fixed display box that is taller than the
-    card content; by anchoring the box's bottom to the card and using
-    object-position: bottom, the visible artwork's bottom aligns with
-    the card baseline while the box top naturally extends above the
-    card (creating the overhang). No translate is used so the bottom
-    alignment remains strict. */
   width: 220px;
-  height: 420px; /* taller box so the image can extend above the card while bottom stays aligned */
+  height: auto;
   object-fit: contain;
   object-position: bottom left;
   z-index: 3;
-  border: none; /* remove the black box outline */
+  border: none;
   display: block;
-  pointer-events: none; /* don't let the image block text links */
+  align-self: end; /* keep portrait baseline aligned with content */
+  justify-self: start;
+  pointer-events: none;
 }
 
 /* Responsive: reduce portrait size and left padding on narrow viewports */
 @media (max-width: 640px) {
-  .withPortrait {
-    padding-left: calc(140px + 24px);
-    padding-top: 36px;
+  .neo_brutalist_card {
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
   }
   .portrait {
     width: 140px;
-    height: 300px;
-    left: 16px;
+    height: auto;
   }
 }
 
 /* On narrow viewports let cards fall back to natural height (stacked) */
 @media (max-width: 700px) {
   .neo_brutalist_card {
-    aspect-ratio: auto;
+    grid-template-columns: 1fr; /* stack portrait above content on very small viewports */
+    gap: 12px;
     min-height: 0;
     padding: 14px;
-    /* Prevent card overhangs (portraits / shadows) from overlapping footer on small screens */
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 6px 6px 0px var(--foundation-black);
   }
 }
