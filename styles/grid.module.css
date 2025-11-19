@@ -55,10 +55,14 @@
        constrain the grid so cards have breathing room on wide viewports. */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: clamp(1rem, 2.5vw, 2rem);
-    align-items: stretch; /* ensure cells stretch to equal height */
+    /* let each card size to its own content and sit at the top of the row */
+    align-items: start;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
+    /* Prevent portrait SVGs from overlapping the intro blurb above the grid.
+       The value scales with viewport width but is clamped for predictability. */
+    padding-top: clamp(48px, 8vw, 160px);
   }
 }
 
@@ -73,6 +77,19 @@
   height: auto;
   min-height: 180px; /* keeps a reasonable minimum so small cards still look balanced */
   overflow: visible; /* allow portrait overhangs while keeping content inside */
+}
+
+/* Ensure grid items align to the top so cards grow with their content rather
+   than stretching to match taller siblings. Prevent unexpected overflow by
+   allowing card content to wrap naturally. */
+.peopleGrid > li {
+  align-self: start;
+}
+
+/* Improve text wrapping for long words and better readability across sizes. */
+.peopleGrid :global(.neo_brutalist_card) p {
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Utility: ensure grid children stretch to full cell width */
