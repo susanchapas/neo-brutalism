@@ -67,8 +67,8 @@ export default function People() {
               const palette = ['--digital-yellow', '--status-green', '--system-blue']
               const bg = palette[i % palette.length]
               return (
-                <li key={person.name} className={gridStyles.gridItem}>
-                  <PersonProfile person={person} bgVar={bg} />
+                  <li key={person.name} className={gridStyles.gridItem}>
+                  <PersonProfile person={person} bgVar={bg} isListing />
                 </li>
               )
             })}

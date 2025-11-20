@@ -73,7 +73,7 @@
    paragraphs do not overflow beneath the card and risk being covered
    or visually colliding with the footer. Use a more specific selector
    (card descendant of each grid item) so this rule reliably wins. */
-.peopleGrid > li :global(.neo_brutalist_card) {
+.peopleGrid > li .people-listing {
   aspect-ratio: auto !important;
   height: auto !important;
   min-height: 180px; /* keeps a reasonable minimum so small cards still look balanced */
@@ -88,7 +88,7 @@
 }
 
 /* Improve text wrapping for long words and better readability across sizes. */
-.peopleGrid :global(.neo_brutalist_card) p {
+.peopleGrid > li .people-listing p {
   overflow-wrap: break-word;
   hyphens: auto;
 }

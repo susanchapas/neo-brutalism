@@ -14,9 +14,11 @@ type Props = {
   person: Person
   /** CSS variable name, e.g. '--digital-yellow' */
   bgVar?: string
+  /** When true, apply listing layout overrides so the card grows with content */
+  isListing?: boolean
 }
 
-export default function PersonProfile({ person, bgVar = '--status-green' }: Props) {
+export default function PersonProfile({ person, bgVar = '--status-green', isListing = false }: Props) {
   const [currentImage, setCurrentImage] = useState(person.image)
   // Force person cards to a white background and readable text for consistency
   const textColor = 'var(--foundation-black)'
@@ -33,7 +35,7 @@ export default function PersonProfile({ person, bgVar = '--status-green' }: Prop
 
   return (
     <article
-      className={`${cardStyles.neo_brutalist_card} ${cardStyles.withPortrait}`}
+      className={`${cardStyles.neo_brutalist_card} ${cardStyles.withPortrait} ${isListing ? 'people-listing' : ''}`}
       style={{
         backgroundColor: 'var(--paper-white)',
         color: textColor,
