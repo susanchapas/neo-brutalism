@@ -65,7 +65,9 @@
 /* Header and accordion panel inside the card */
 .cardHeader {
   display: flex;
-  align-items: flex-end;
+  /* center the title vertically so it doesn't sit under the portrait baseline */
+  align-items: center;
+  gap: 12px;
 }
 
 .cardTitle {
@@ -73,15 +75,26 @@
   padding-left: 24px; /* minimal left padding so title sits after portrait */
 }
 
+.cardTitle h3 {
+  margin: 0;
+  /* responsive size so long names wrap comfortably */
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.1;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
 .toggleButton {
   background: none;
   border: none;
-  padding: 0;
+  padding: 6px 8px;
   margin: 0;
   text-align: left;
   width: 100%;
   cursor: pointer;
   font: inherit;
+  position: relative;
+  z-index: 5; /* ensure the button sits above portrait overhangs */
 }
 
 .toggleButton:focus {
