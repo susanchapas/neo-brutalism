@@ -37,7 +37,10 @@
     card (creating the overhang). No translate is used so the bottom
     alignment remains strict. */
   width: 220px;
-  height: 420px; /* taller box so the image can extend above the card while bottom stays aligned */
+  /* prevent extremely tall overhangs while still allowing portrait to extend
+     above the card. Use a responsive clamp so tall viewports show larger
+     portraits but small viewports are constrained. */
+  height: clamp(240px, 35vh, 420px);
   object-fit: contain;
   object-position: bottom left;
   z-index: 3;
@@ -54,9 +57,54 @@
   }
   .portrait {
     width: 140px;
-    height: 300px;
+    height: clamp(160px, 35vh, 300px);
     left: 16px;
   }
+}
+
+/* Header and accordion panel inside the card */
+.cardHeader {
+  display: flex;
+  align-items: flex-end;
+}
+
+.cardTitle {
+  width: 100%;
+  padding-left: 24px; /* minimal left padding so title sits after portrait */
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font: inherit;
+}
+
+.toggleButton:focus {
+  outline: 3px solid var(--digital-yellow);
+  outline-offset: 3px;
+}
+
+.panel {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 260ms ease, padding 160ms ease;
+  padding: 0 18px;
+}
+
+.panel.expanded {
+  /* large max-height to allow content to expand; this keeps the transition
+     simple and avoids JS-measured heights while still being practical. */
+  max-height: 1000px;
+  padding: 12px 18px 18px;
+}
+
+.role {
+  margin-top: 6px;
 }
 
 /* On narrow viewports let cards fall back to natural height (stacked) */

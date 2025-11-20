@@ -20,6 +20,7 @@ type Props = {
 
 export default function PersonProfile({ person, bgVar = '--status-green', isListing = false }: Props) {
   const [currentImage, setCurrentImage] = useState(person.image)
+  const [expanded, setExpanded] = useState(false)
   // Force person cards to a white background and readable text for consistency
   const textColor = 'var(--foundation-black)'
 
@@ -33,6 +34,8 @@ export default function PersonProfile({ person, bgVar = '--status-green', isList
     setCurrentImage(person.image)
   }
 
+  const idSlug = person.name.replace(/\s+/g, '-')
+
   return (
     <article
       className={`${cardStyles.neo_brutalist_card} ${cardStyles.withPortrait} ${isListing ? 'people-listing' : ''}`}
@@ -43,23 +46,39 @@ export default function PersonProfile({ person, bgVar = '--status-green', isList
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onFocus={handleMouseEnter}
-      onBlur={handleMouseLeave}
-      tabIndex={0}
-      aria-labelledby={`person-${person.name.replace(/\s+/g, '-')}`}
     >
-      <img
-        className={cardStyles.portrait}
-        src={encodeURI(currentImage)}
-        alt={`Portrait of ${person.name}`}
-        aria-hidden="true"
-      />
-      <h3 id={`person-${person.name.replace(/\s+/g, '-')}`}>{person.name}</h3>
-      <p style={{ fontFamily: 'var(--mono-font)', margin: '6px 0' }}>{person.role}</p>
-      <p style={{ margin: '6px 0 12px' }}>{person.bio}</p>
-      <a href={person.link} rel="noopener noreferrer" style={{ color: textColor, textDecoration: 'underline' }}>
-        View Work
-      </a>
+      <div className={cardStyles.cardHeader}>
+        <img
+          className={cardStyles.portrait}
+          src={encodeURI(currentImage)}
+          alt={`Portrait of ${person.name}`}
+        />
+
+        <div className={cardStyles.cardTitle}>
+          <button
+            className={cardStyles.toggleButton}
+            aria-expanded={expanded}
+            aria-controls={`panel-${idSlug}`}
+            id={`toggle-${idSlug}`}
+            onClick={() => setExpanded((v) => !v)}
+          >
+            <h3 id={`person-${idSlug}`}>{person.name}</h3>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id={`panel-${idSlug}`}
+        role="region"
+        aria-labelledby={`toggle-${idSlug}`}
+        className={expanded ? `${cardStyles.panel} ${cardStyles.expanded}` : cardStyles.panel}
+      >
+        <p className={cardStyles.role} style={{ fontFamily: 'var(--mono-font)', margin: '6px 0' }}>{person.role}</p>
+        <p style={{ margin: '6px 0 12px' }}>{person.bio}</p>
+        <a href={person.link} rel="noopener noreferrer" style={{ color: textColor, textDecoration: 'underline' }}>
+          View Work
+        </a>
+      </div>
     </article>
   )
 }
