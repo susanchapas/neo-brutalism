@@ -2,23 +2,31 @@
   background: var(--system-blue);
   color: var(--paper-white);
   padding: var(--page-padding);
+  position: relative;
+  /* make room for motif that visually sits on top of the footer */
+  padding-top: calc(var(--page-padding) + 6.5rem);
   border-top: var(--border-thick);
 }
 
 /* Motif decorative image at top of footer */
 .motifWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  pointer-events: none; /* decorative only */
+  overflow: hidden;
 }
 
 .motif {
-  width: 100%;
-  max-width: 1100px;
+  width: min(var(--max-width), 100%);
+  max-width: var(--max-width);
   height: auto;
   display: block;
-  margin-bottom: 16px;
-  position: relative;
+  margin: 0 auto;
+  transform: translateY(-50%);
   z-index: 1;
   filter: drop-shadow(0 6px 0 rgba(0,0,0,0.12));
 }
@@ -93,7 +101,13 @@
     gap: 16px;
   }
   .motif {
+    transform: translateY(-40%);
+    width: 100%;
     max-width: 100%;
-    margin-bottom: 12px;
+  }
+
+  /* reduce the top padding on small screens so the footer doesn't become too tall */
+  .footer {
+    padding-top: calc(var(--page-padding) + 4.5rem);
   }
 }
