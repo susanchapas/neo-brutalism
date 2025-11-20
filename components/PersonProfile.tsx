@@ -47,7 +47,20 @@ export default function PersonProfile({ person, bgVar = '--status-green', isList
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={cardStyles.cardHeader}>
+      <div
+        className={cardStyles.cardHeader}
+        onClick={() => setExpanded((v) => !v)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            setExpanded((v) => !v)
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-expanded={expanded}
+        aria-controls={`panel-${idSlug}`}
+      >
         <img
           className={cardStyles.portrait}
           src={encodeURI(currentImage)}
@@ -60,7 +73,11 @@ export default function PersonProfile({ person, bgVar = '--status-green', isList
             aria-expanded={expanded}
             aria-controls={`panel-${idSlug}`}
             id={`toggle-${idSlug}`}
-            onClick={() => setExpanded((v) => !v)}
+            onClick={(e) => {
+              e.stopPropagation()
+              setExpanded((v) => !v)
+            }}
+            type="button"
           >
             <h3 id={`person-${idSlug}`}>{person.name}</h3>
           </button>
