@@ -68,13 +68,14 @@
 
 /* Ensure cards in the people grid can grow vertically to contain their
    content. The base `.neo_brutalist_card` uses an aspect-ratio and
-   `height: 100%` to create a compact, consistent card for some layouts,
-   but for the people listing we want each card to size to its content
-   so paragraphs do not overflow beneath the card. Use :global to target
-   the shared card class from inside this module. */
-.peopleGrid :global(.neo_brutalist_card) {
-  aspect-ratio: auto;
-  height: auto;
+   `height: 100%` to create compact cards in other contexts. For the
+   people listing we must force cards to size to their content so
+   paragraphs do not overflow beneath the card and risk being covered
+   or visually colliding with the footer. Use a more specific selector
+   (card descendant of each grid item) so this rule reliably wins. */
+.peopleGrid > li :global(.neo_brutalist_card) {
+  aspect-ratio: auto !important;
+  height: auto !important;
   min-height: 180px; /* keeps a reasonable minimum so small cards still look balanced */
   overflow: visible; /* allow portrait overhangs while keeping content inside */
 }

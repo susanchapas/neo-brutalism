@@ -46,7 +46,7 @@ export default function People() {
         <meta name="description" content="Key figures in the Neo-Brutalism movement." />
       </Head>
       <Header />
-      <main id="main" style={{ padding: 'var(--page-padding)', minHeight: '100vh' }}>
+      <main id="main" style={{ padding: 'var(--page-padding)' }}>
         {/* add extra spacing under the hero */}
         <div style={{ marginBottom: '48px' }}>
           <GlitchedHeader text="PEOPLE" />
