@@ -170,7 +170,7 @@ Define CSS variables for the brand palette and typography. Example (Copilot shou
   --digital-yellow: #FFEB00;
   --warning-red: #FF004E;
   --system-blue: #0050FF;
-  --status-green: #20FFB5;
+  --status-green: #aee20f;
 
   --h1-font: 'Anton', system-ui, sans-serif;
   --mono-font: 'Space Mono', monospace;

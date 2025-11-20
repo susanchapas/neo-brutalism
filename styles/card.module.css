@@ -10,18 +10,99 @@
   display: flex;
   flex-direction: column;
   height: 100%; /* fill the grid cell so cards are uniform */
-    /* make cards much shorter: wider relative to height so the visible
-      card area is reduced (approx one-third of previous height) */
-    aspect-ratio: 3 / 1;
-    min-height: 100px;
+    /* make cards taller so person profiles are more prominent */
+    min-height: 320px;
   overflow: visible; /* allow portrait overhang to show */
+}
+
+/* Person card: 2-column grid layout */
+.personCard {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 20px;
+  padding: 0;
+  overflow: visible; /* allow SVG to overflow upward */
+  position: relative;
+}
+
+/* Left column: image container */
+.personImageCol {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: flex-end; /* align image to bottom of container */
+  height: 100%;
+}
+
+/* Portrait image with 10% overflow at top */
+.personPortrait {
+  width: 100%;
+  height: 110%; /* 10% taller than container to create overflow */
+  object-fit: cover;
+  object-position: center bottom; /* anchor to bottom so overflow goes up */
+  display: block;
+}
+
+/* Right column: content */
+.personContentCol {
+  padding: 24px 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.personName {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.1;
+  word-break: break-word;
+}
+
+.personRole {
+  margin: 0;
+  font-family: var(--mono-font);
+  font-size: 0.9rem;
+  color: var(--foundation-black);
+}
+
+.personBio {
+  margin: 0;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.personLink {
+  color: var(--foundation-black);
+  text-decoration: underline;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+/* Responsive: stack on narrow viewports */
+@media (max-width: 640px) {
+  .personCard {
+    grid-template-columns: 35% 1fr;
+    gap: 12px;
+    min-height: 280px;
+  }
+  
+  .personImageCol {
+    /* maintain flex-end alignment so overflow stays at top */
+  }
+  
+  .personPortrait {
+    /* keep same overflow behavior on mobile */
+  }
+  
+  .personContentCol {
+    padding: 18px 18px 18px 0;
+  }
 }
 
 /* When a card has a portrait that sits to the left and overhangs vertically */
 .withPortrait {
   position: relative;
-  /* keep the text clear of the portrait: portrait width (220px) + 40px gutter */
-  padding-left: calc(220px + 40px);
+  padding-left: calc(220px + 5px);
 }
 
 .portrait {
@@ -103,18 +184,12 @@
 }
 
 .panel {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 260ms ease, padding 160ms ease;
-  padding: 0 18px;
-}
-
-.panel.expanded {
-  /* large max-height to allow content to expand; this keeps the transition
-     simple and avoids JS-measured heights while still being practical. */
-  max-height: 1000px;
+  overflow: visible;
+  max-height: none;
+  transition: none;
   padding: 12px 18px 18px;
 }
+
 
 .role {
   margin-top: 6px;
@@ -129,6 +204,13 @@
     /* Prevent card overhangs (portraits / shadows) from overlapping footer on small screens */
     overflow: hidden;
     box-shadow: 6px 6px 0px var(--foundation-black);
+  }
+  
+  /* Person cards must keep overflow visible for SVG overflow */
+  .neo_brutalist_card.personCard {
+    overflow: visible;
+    padding: 0;
+    min-height: 280px;
   }
 }
 
