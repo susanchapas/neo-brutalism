@@ -3,6 +3,9 @@ import styles from '../styles/footer.module.css'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
+      <div className={styles.motifWrap}>
+        <img src="/images/Footer-decor.svg" alt="" aria-hidden="true" className={styles.motif} />
+      </div>
       <div className={styles.row1}>
         <div className={styles.status}>
           <span className={styles.label}>[SITE STATUS]</span>

@@ -5,6 +5,21 @@
   border-top: var(--border-thick);
 }
 
+/* Motif decorative image at top of footer */
+.motifWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.motif {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+  margin-bottom: 16px;
+}
+
 .row1 {
   display: flex;
   justify-content: space-between;
@@ -73,5 +88,9 @@
   .row1, .row2 {
     flex-direction: column;
     gap: 16px;
+  }
+  .motif {
+    max-width: 100%;
+    margin-bottom: 12px;
   }
 }
