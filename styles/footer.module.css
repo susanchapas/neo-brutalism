@@ -4,7 +4,7 @@
   /* tighter vertical padding for a lower-profile footer */
   padding: 1.25rem var(--page-padding);
   position: relative;
-  /* No decorative motif; use standard top padding */
+  /* Standard top padding - decoration sits above in document flow */
   padding-top: 1.25rem;
   border-top: var(--border-thick);
 }

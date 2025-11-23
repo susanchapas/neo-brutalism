@@ -1,0 +1,67 @@
+/* Footer decoration component - positions geometric SVG pattern above footer */
+
+.decorContainer {
+  width: 100%;
+  height: auto;
+  /* Remove pointer events to make it purely decorative */
+  pointer-events: none;
+  /* Prevent layout shift */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  /* Slight negative margin to create seamless connection with footer */
+  margin-bottom: -2px;
+}
+
+.decorImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Maintain aspect ratio */
+  max-height: 200px;
+  object-fit: cover;
+  object-position: bottom;
+  /* Smooth rendering for geometric shapes */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Responsive breakpoints for optimal display */
+@media (max-width: 1439px) {
+  .decorImage {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .decorImage {
+    max-height: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .decorImage {
+    max-height: 90px;
+  }
+}
+
+@media (max-width: 479px) {
+  .decorImage {
+    max-height: 60px;
+  }
+}
+
+/* Reduce motion for users with preference */
+@media (prefers-reduced-motion: reduce) {
+  .decorContainer {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .decorImage {
+    filter: contrast(1.2);
+  }
+}
