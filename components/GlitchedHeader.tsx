@@ -15,7 +15,7 @@ export default function GlitchedHeader({ text }: GlitchedHeaderProps) {
         position: 'absolute',
         top: '10px',
         left: '10px',
-        width: '100%',
+        right: '10px',
         height: '100%',
         backgroundColor: 'var(--digital-yellow)',
         zIndex: 0,

@@ -3,10 +3,9 @@ import styles from '../styles/footer.module.css'
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.motifWrap}>
-        <img src="/images/Footer-decor.svg" alt="" aria-hidden="true" className={styles.motif} />
-      </div>
-      <div className={styles.row1}>
+      {/* Decorative motif removed to avoid layout issues */}
+      <div className={styles.container}>
+        <div className={styles.row1}>
         <div className={styles.status}>
           <span className={styles.label}>[SITE STATUS]</span>
           <span aria-hidden="true" className={styles.dot}></span>
@@ -23,13 +22,14 @@ export default function Footer() {
         <div className={styles.social}>
           <a href="https://github.com/susanchapas/neo-brutalism" aria-label="GitHub repository" rel="noopener noreferrer">GitHub</a>
         </div>
-      </div>
-      <div className={styles.row2}>
+        </div>
+        <div className={styles.row2}>
         <address>
           Contact: <a href="mailto:info@neo-brutalist.example">info@neo-brutalist.example</a>
         </address>
         <a href="/accessibility">Accessibility Statement</a>
         <p>&copy; 2025 Neo-Brutalist Archive</p>
+        </div>
       </div>
     </footer>
   )
