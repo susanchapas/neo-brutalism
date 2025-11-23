@@ -15,6 +15,18 @@ body {
   color: var(--foundation-black);
 }
 
+/* Prevent accidental horizontal scrolling from wide children */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ensure images and svgs don't exceed their containers */
+img, svg, picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 h1, h2, h3 {
   margin: 0;
 }
