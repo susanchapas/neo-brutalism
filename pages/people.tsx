@@ -50,11 +50,18 @@ export default function People() {
           property="og:description"
           content="Key figures in the Neo-Brutalism movement."
         />
+        <meta
+          property="og:image"
+          content={`${base}/og-image.png`}
+        />
+        <meta
+          name="twitter:image"
+          content={`${base}/og-image.png`}
+        />
         <link
           rel="canonical"
           href="https://susanchapas.github.io/neo-brutalism/people"
         />
-      </Head>
       <Header />
       <main id="main" style={{ padding: 'var(--page-padding)' }}>
         {/* add extra spacing under the hero */}
