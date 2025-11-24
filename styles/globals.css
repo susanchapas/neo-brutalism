@@ -16,18 +16,23 @@ body {
 }
 
 /* Prevent accidental horizontal scrolling from wide children */
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 /* Ensure images and svgs don't exceed their containers */
-img, svg, picture {
+img,
+svg,
+picture {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -46,6 +51,11 @@ a:focus {
 
 button {
   font-family: inherit;
+}
+
+button:focus {
+  outline: 3px solid var(--digital-yellow);
+  outline-offset: 3px;
 }
 
 .visually-hidden {

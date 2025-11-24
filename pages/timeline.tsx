@@ -10,7 +10,20 @@ export default function Timeline() {
     <>
       <Head>
         <title>Timeline - Neo-Brutalism</title>
-        <meta name="description" content="Chronological development of Neo-Brutalism design." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Chronological development of Neo-Brutalism design."
+        />
+        <meta property="og:title" content="Timeline - Neo-Brutalism" />
+        <meta
+          property="og:description"
+          content="Chronological development of Neo-Brutalism design."
+        />
+        <link
+          rel="canonical"
+          href="https://susanchapas.github.io/neo-brutalism/timeline"
+        />
       </Head>
       <Header />
       <main id="main" style={{ padding: 'var(--page-padding)' }}>

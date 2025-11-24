@@ -1,0 +1,16 @@
+{
+  "name": "Neo-Brutalism Archive",
+  "short_name": "Neo-Brutalism",
+  "description": "Discover Neo-Brutalism design principles and history",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

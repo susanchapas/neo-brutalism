@@ -1,0 +1,59 @@
+.errorContainer {
+  background: var(--paper-white);
+  color: var(--foundation-black);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--page-padding);
+}
+
+.errorCode {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.errorMessage {
+  font-family: var(--body-font);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.homeButton {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--digital-yellow);
+  color: var(--foundation-black);
+  text-decoration: none;
+  font-family: var(--mono-font);
+  font-weight: bold;
+  border: 4px solid var(--foundation-black);
+  box-shadow: 5px 5px 0 var(--foundation-black);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.homeButton:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--foundation-black);
+}
+
+.homeButton:focus {
+  outline: 3px solid var(--digital-yellow);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homeButton {
+    transition: none;
+  }
+
+  .homeButton:hover {
+    transform: none;
+  }
+}
