@@ -4,6 +4,8 @@ A Next.js TypeScript project showcasing Neo-Brutalism design principles.
 
 Live Site: https://susanchapas.github.io/neo-brutalism
 
+[AI collaboration process with time stamps](story.md)
+
 ## Run Locally
 
 1. Install dependencies: `npm install`
