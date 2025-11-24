@@ -4,4 +4,12 @@ module.exports = {
     'jsx-a11y/no-autofocus': 'error',
     'jsx-a11y/anchor-has-content': 'error',
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      parserOptions: {
+        project: './tsconfig.json',
+      },
+    },
+  ],
 }

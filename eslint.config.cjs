@@ -8,7 +8,6 @@ module.exports = [
         ecmaVersion: 2020,
         sourceType: "module",
         ecmaFeatures: { jsx: true },
-        project: "./tsconfig.json",
       },
     },
     plugins: {
@@ -17,6 +16,16 @@ module.exports = [
     rules: {
       "jsx-a11y/no-autofocus": "error",
       "jsx-a11y/anchor-has-content": "error",
+    },
+  },
+  {
+    // Exclude config files from TypeScript project checks
+    files: ["*.config.js", "*.config.cjs", ".eslintrc.js"],
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+      },
     },
   },
 ];

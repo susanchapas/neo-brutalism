@@ -39,6 +39,9 @@ export default function PersonProfile({
           className={cardStyles.personPortrait}
           src={encodeURI(person.image)}
           alt={`Portrait of ${person.name}`}
+          width="200"
+          height="200"
+          loading="lazy"
         />
       </div>
 
