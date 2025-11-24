@@ -78,7 +78,7 @@
 
 .navList a[aria-current='page'] {
   color: var(--glitch-purple);
-  border-bottom: 4px solid var(--digital-yellow);
+  border-bottom: 4px solid var(--glitch-purple);
 }
 
 @media (max-width: 639px) {

@@ -1,6 +1,7 @@
-'use client'
+"use client"
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import styles from '../styles/header.module.css'
 import navStyles from '../styles/nav.module.css'
@@ -55,8 +56,8 @@ export default function Header() {
         Skip to content
       </a>
       <div className={styles.brand}>
-        <Link href="/" aria-label="Neo-Brutalist Home">
-          <strong className={styles.logo}>NEO-BRUTALIST</strong>
+        <Link href="/" aria-label="NEO-BRUTALISM Home">
+          <strong className={styles.logo}>NEO-BRUTALISM</strong>
         </Link>
       </div>
       <button
@@ -80,40 +81,26 @@ export default function Header() {
         className={isMenuOpen ? styles.navOpen : ''}
       >
         <ul className={styles.navList}>
+          {
+            // determine current pathname and set aria-current dynamically
+          }
           <li>
-            <Link
-              href="/"
-              className={navStyles.nav_link}
-              aria-current="page"
-              onClick={closeMenu}
-            >
+            <Link href="/" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/' ? 'page' : undefined}>
               Home
             </Link>
           </li>
           <li>
-            <Link
-              href="/about"
-              className={navStyles.nav_link}
-              onClick={closeMenu}
-            >
+            <Link href="/about" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/about' ? 'page' : undefined}>
               About
             </Link>
           </li>
           <li>
-            <Link
-              href="/timeline"
-              className={navStyles.nav_link}
-              onClick={closeMenu}
-            >
+            <Link href="/timeline" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/timeline' ? 'page' : undefined}>
               Timeline
             </Link>
           </li>
           <li>
-            <Link
-              href="/people"
-              className={navStyles.nav_link}
-              onClick={closeMenu}
-            >
+            <Link href="/people" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/people' ? 'page' : undefined}>
               People
             </Link>
           </li>
