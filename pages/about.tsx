@@ -4,7 +4,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import GlitchedHeader from '../components/GlitchedHeader'
 import aboutStyles from '../styles/about.module.css'
-import typoStyles from '../styles/typography.module.css'
 
 const accordionData = [
   {
@@ -36,6 +35,7 @@ const accordionData = [
 const AccordionItem = ({ title, content, isOpen, onClick }: { title: string, content: string, isOpen: boolean, onClick: () => void }) => (
   <div className={aboutStyles.accordionItem}>
     <button
+      type="button"
       aria-expanded={isOpen}
       className={`${aboutStyles.accordionButton} ${isOpen ? aboutStyles.active : ''}`}
       onClick={onClick}

@@ -3,7 +3,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import PersonProfile from '../components/PersonProfile'
 import gridStyles from '../styles/grid.module.css'
-import typoStyles from '../styles/typography.module.css'
 import GlitchedHeader from '../components/GlitchedHeader'
 
 // When exporting the site to a subpath (the docs/ export uses an assetPrefix),
@@ -72,17 +71,10 @@ export default function People() {
             People
           </h2>
           <ul className={gridStyles.peopleGrid}>
-            {people.map((person, i) => {
-              // cycle through a palette that keeps text readable
-              const palette = [
-                '--digital-yellow',
-                '--status-green',
-                '--system-blue',
-              ]
-              const bg = palette[i % palette.length]
+            {people.map((person) => {
               return (
                 <li key={person.name} className={gridStyles.gridItem}>
-                  <PersonProfile person={person} bgVar={bg} isListing />
+                  <PersonProfile person={person} isListing />
                 </li>
               )
             })}

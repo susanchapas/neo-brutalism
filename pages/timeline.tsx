@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import TimelineScroller from '../components/TimelineScroller'
-import typoStyles from '../styles/typography.module.css'
 import GlitchedHeader from '../components/GlitchedHeader'
 
 export default function Timeline() {

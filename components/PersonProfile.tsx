@@ -10,18 +10,14 @@ interface Person {
 
 type Props = {
   person: Person
-  /** CSS variable name, e.g. '--digital-yellow' */
-  bgVar?: string
   /** When true, apply listing layout overrides so the card grows with content */
   isListing?: boolean
 }
 
 export default function PersonProfile({
   person,
-  bgVar = '--status-green',
   isListing = false,
 }: Props) {
-  // Force person cards to a white background and readable text for consistency
   const textColor = 'var(--foundation-black)'
 
   const idSlug = person.name.replace(/\s+/g, '-')

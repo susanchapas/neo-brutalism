@@ -1,0 +1,8 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:jsx-a11y/recommended"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "jsx-a11y/no-autofocus": "error",
+    "jsx-a11y/anchor-has-content": "error"
+  }
+}

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "BASE_PATH=/neo-brutalism next dev -p 3000",
-    "build": "next build",
+    "build": "SKIP_ENV_VALIDATION=true next build",
     "export:docs": "next build && next export -o docs",
     "start": "next start -p 3000",
     "lint": "next lint",

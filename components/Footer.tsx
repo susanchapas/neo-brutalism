@@ -1,13 +1,14 @@
-import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import styles from '../styles/footer.module.css'
 import FooterDecor from './FooterDecor'
 
 export default function Footer() {
-  const router = useRouter()
+  const pathname = usePathname()
   
   const isActive = (path: string) => {
-    if (path === '/neo-brutalism' && router.pathname === '/') return true
-    if (path !== '/neo-brutalism' && router.pathname.startsWith(path.replace('/neo-brutalism', ''))) return true
+    if (path === '/' && pathname === '/') return true
+    if (path !== '/' && pathname === path) return true
     return false
   }
 
@@ -25,10 +26,10 @@ export default function Footer() {
           </div>
           <nav aria-label="Site map">
             <ul className={styles.siteMap}>
-              <li><a href="/neo-brutalism" className={isActive('/neo-brutalism') ? styles.activeLink : ''}>Home</a></li>
-              <li><a href="/neo-brutalism/about" className={isActive('/neo-brutalism/about') ? styles.activeLink : ''}>About</a></li>
-              <li><a href="/neo-brutalism/timeline" className={isActive('/neo-brutalism/timeline') ? styles.activeLink : ''}>Timeline</a></li>
-              <li><a href="/neo-brutalism/people" className={isActive('/neo-brutalism/people') ? styles.activeLink : ''}>People</a></li>
+              <li><Link href="/" className={isActive('/') ? styles.activeLink : ''}>Home</Link></li>
+              <li><Link href="/about" className={isActive('/about') ? styles.activeLink : ''}>About</Link></li>
+              <li><Link href="/timeline" className={isActive('/timeline') ? styles.activeLink : ''}>Timeline</Link></li>
+              <li><Link href="/people" className={isActive('/people') ? styles.activeLink : ''}>People</Link></li>
             </ul>
           </nav>
           <div className={styles.social}>
@@ -40,7 +41,7 @@ export default function Footer() {
           </div>
           </div>
           <div className={styles.row2}>
-          <a href="/neo-brutalism/accessibility" style={{ color: 'var(--paper-white)' }}>Accessibility Statement</a>
+          <Link href="/accessibility" className={styles.accessibilityLink}>Accessibility Statement</Link>
           <p style={{ margin: 0, textAlign: 'center', flex: '1' }}>&copy; 2025 Neo-Brutalist Archive</p>
           </div>
         </div>

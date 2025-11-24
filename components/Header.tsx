@@ -10,6 +10,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
+  const pathname = usePathname()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -81,26 +82,23 @@ export default function Header() {
         className={isMenuOpen ? styles.navOpen : ''}
       >
         <ul className={styles.navList}>
-          {
-            // determine current pathname and set aria-current dynamically
-          }
           <li>
-            <Link href="/" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/' ? 'page' : undefined}>
+            <Link href="/" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/' ? 'page' : undefined}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/about' ? 'page' : undefined}>
+            <Link href="/about" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/about' ? 'page' : undefined}>
               About
             </Link>
           </li>
           <li>
-            <Link href="/timeline" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/timeline' ? 'page' : undefined}>
+            <Link href="/timeline" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/timeline' ? 'page' : undefined}>
               Timeline
             </Link>
           </li>
           <li>
-            <Link href="/people" className={navStyles.nav_link} onClick={closeMenu} aria-current={usePathname() === '/people' ? 'page' : undefined}>
+            <Link href="/people" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/people' ? 'page' : undefined}>
               People
             </Link>
           </li>

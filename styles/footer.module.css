@@ -97,12 +97,12 @@
   gap: 0.75rem;
 }
 
-.row2 a {
+.accessibilityLink {
   color: var(--paper-white);
   text-decoration: underline;
 }
 
-.row2 a:focus {
+.accessibilityLink:focus {
   outline: 3px solid var(--digital-yellow);
   outline-offset: 3px;
 }

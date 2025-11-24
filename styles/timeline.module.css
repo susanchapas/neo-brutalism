@@ -11,7 +11,6 @@
 
 .timeline_container {
   width: 100%;
-  /* wider container to give timeline cards more horizontal room */
   max-width: 1100px;
   margin: 50px auto;
   padding: 32px 24px;
@@ -29,8 +28,6 @@
   opacity: 0;
   transform: translateY(30px) scale(0.95);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  /* use flex so cards can be aligned toward the center line while
-     keeping a consistent readable max-width */
   display: flex;
   align-items: flex-start;
 }
@@ -40,7 +37,6 @@
   transform: translateY(0) scale(1);
 }
 
-/* Stagger the animation for each item - only applies on initial load for fallback */
 .timeline_item:nth-child(1) { transition-delay: 0.1s; }
 .timeline_item:nth-child(2) { transition-delay: 0.2s; }
 .timeline_item:nth-child(3) { transition-delay: 0.3s; }
@@ -50,13 +46,13 @@
 .timeline_item.left {
   left: 0;
   padding-right: 32px;
-  justify-content: flex-end; /* push card toward the center line */
+  justify-content: flex-end;
 }
 
 .timeline_item.right {
   left: 50%;
   padding-left: 32px;
-  justify-content: flex-start; /* keep card away from edge */
+  justify-content: flex-start;
 }
 
 .timeline_dot {
@@ -67,7 +63,7 @@
   border-radius: 50%;
   background-color: var(--electric-yellow);
   border: 4px solid var(--foundation-black);
-  z-index: 2; /* Above the line, below the card */
+  z-index: 2;
 }
 
 .left .timeline_dot {
@@ -78,9 +74,7 @@
   left: -14px;
 }
 
-/* --- Angular Path using Pseudo-elements --- */
-
-/* Vertical line segment for each item */
+/* Vertical and horizontal connectors */
 .timeline_item::before {
   content: '';
   position: absolute;
@@ -91,11 +85,10 @@
   height: 100%;
 }
 
-/* Horizontal connector for each item */
 .timeline_item::after {
   content: '';
   position: absolute;
-  top: 42px; /* Aligns with the dot */
+  top: 42px;
   height: 4px;
   background-color: var(--foundation-black);
   z-index: 1;
@@ -119,27 +112,33 @@
   width: 40px;
 }
 
-/* Connect the segments */
 .timeline_item:not(:last-child)::before {
-  height: calc(100% + 40px); /* Extend line to next item */
+  height: calc(100% + 40px);
 }
 
 .timeline_item_content {
   cursor: pointer;
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  display: block;
+  max-width: 560px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  text-align: left;
   position: relative;
-  z-index: 3; /* Ensure card is on top */
+  z-index: 3;
 }
 
-/* card sizing and typography scoped to timeline for accessibility/readability */
-.timeline_item_content {
-  display: block; /* ensure block-level for width control */
-  max-width: 560px; /* keep readable line-length */
-  width: 100%;
+.timeline_item_content:focus {
+  outline: none;
+}
+
+.timeline_item_content:focus-visible {
+  outline: 3px solid var(--electric-yellow);
+  outline-offset: 4px;
 }
 
 .timeline_item_content :global(.neo_brutalist_card) {
-  /* let cards expand naturally but constrain the line-length */
   aspect-ratio: auto !important;
   height: auto !important;
   min-height: 0 !important;
@@ -149,7 +148,7 @@
   box-shadow: 10px 10px 0px var(--foundation-black);
 }
 
-.timeline_item_content:hover {
+.timeline_item_content:hover :global(.neo_brutalist_card) {
   transform: translate(8px, -8px);
   box-shadow: 16px 16px 0px var(--hot-pink);
   border-color: var(--hot-pink);
@@ -168,40 +167,6 @@
   border-left: 4px solid var(--vibrant-purple);
   padding-left: 16px;
   margin-top: 12px;
-}
-
-/* Accessibility & card sizing tweaks specific to the timeline.
-   The site-wide `.neo_brutalist_card` enforces an aspect-ratio which
-   makes textual content truncate inside the timeline. Scoped overrides
-   for the timeline allow cards to grow with their content while keeping
-   the original card styles elsewhere. */
-
-.timeline_item_content {
-  display: block; /* make the button behave like a block wrapper */
-  border: none;
-  background: transparent;
-  padding: 0;
-  text-align: left;
-  cursor: pointer;
-}
-
-.timeline_item_content:focus {
-  outline: none;
-}
-
-.timeline_item_content:focus-visible {
-  outline: 3px solid var(--electric-yellow);
-  outline-offset: 4px;
-}
-
-/* Target the card class defined in card.module.css from inside the timeline
-   using :global so we can override the fixed aspect-ratio only here. */
-.timeline_item_content :global(.neo_brutalist_card) {
-  aspect-ratio: auto !important;
-  height: auto !important;
-  min-height: 0 !important;
-  overflow: visible !important;
-  box-shadow: 10px 10px 0px var(--foundation-black);
 }
 
 @media (max-width: 768px) {
@@ -233,6 +198,16 @@
   .right::after {
     left: 20px;
     width: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline_item {
+    transition: none;
+  }
+  
+  .expanded_content {
+    animation: none;
   }
 }
 

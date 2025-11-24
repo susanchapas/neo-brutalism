@@ -3,7 +3,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import AccessibleCard from '../components/AccessibleCard'
 import { organizationJsonLd, websiteJsonLd } from '../utils/seo'
-import typoStyles from '../styles/typography.module.css'
 import gridStyles from '../styles/grid.module.css'
 import layoutStyles from '../styles/layout.module.css'
 import GlitchedHeader from '../components/GlitchedHeader'
@@ -29,8 +28,8 @@ export default function Home() {
         </p>
         <section>
           <div className={gridStyles.homeGrid}>
-            <AccessibleCard bgVar="--digital-yellow" title="FIGMA - SITE SAMPLE" description="Figma is a collaborative interface design tool that embodies Neo-Brutalist principles in its raw, functional design." link="https://figma.com" />
-            <AccessibleCard bgVar="--system-blue" title="GUMROAD - SITE SAMPLE" description="Gumroad is a platform for creators to sell digital products, featuring a direct, no-nonsense approach to e-commerce." link="https://gumroad.com" />
+            <AccessibleCard title="FIGMA - SITE SAMPLE" description="Figma is a collaborative interface design tool that embodies Neo-Brutalist principles in its raw, functional design." link="https://figma.com" />
+            <AccessibleCard title="GUMROAD - SITE SAMPLE" description="Gumroad is a platform for creators to sell digital products, featuring a direct, no-nonsense approach to e-commerce." link="https://gumroad.com" />
           </div>
         </section>
       </main>

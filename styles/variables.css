@@ -6,6 +6,11 @@
   --warning-red: #FF004E;
   --system-blue: #0050FF;
   --status-green: #20FFB5;
+  
+  /* Timeline-specific colors */
+  --electric-yellow: #FFEB00;
+  --hot-pink: #FF004E;
+  --vibrant-purple: #A300FF;
 
   --h1-font: 'Anton', system-ui, sans-serif;
   --mono-font: 'Space Mono', monospace;

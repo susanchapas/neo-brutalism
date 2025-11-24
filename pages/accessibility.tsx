@@ -76,8 +76,6 @@ export default function Accessibility() {
               <a 
                 href="https://github.com/susanchapas/neo-brutalism/issues" 
                 style={{ color: 'var(--system-blue)', textDecoration: 'underline' }}
-                onFocus={(e) => e.currentTarget.style.outline = '3px solid var(--digital-yellow)'}
-                onBlur={(e) => e.currentTarget.style.outline = 'none'}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Report an accessibility issue on GitHub (opens in new tab)"

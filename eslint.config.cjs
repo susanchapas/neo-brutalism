@@ -1,22 +1,22 @@
-// Flat config for ESLint v9+ — keeps your current rules and JSX a11y plugin
+const nextPlugin = require("@next/eslint-plugin-next");
+const jsxA11y = require("eslint-plugin-jsx-a11y");
+
 module.exports = [
   {
-    files: ["**/*.{ts,tsx,js,jsx}"],
-    languageOptions: {
-      parser: require("@typescript-eslint/parser"),
-      parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: "module",
-        ecmaFeatures: { jsx: true },
-        project: "./tsconfig.json",
-      },
-    },
+    ignores: [".next/**", "out/**", "node_modules/**", "docs/**"],
+  },
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
-      "jsx-a11y": require("eslint-plugin-jsx-a11y"),
+      "@next/next": nextPlugin,
+      "jsx-a11y": jsxA11y,
     },
     rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs["core-web-vitals"].rules,
       "jsx-a11y/no-autofocus": "error",
       "jsx-a11y/anchor-has-content": "error",
+      "@next/next/no-html-link-for-pages": "off",
     },
   },
 ];

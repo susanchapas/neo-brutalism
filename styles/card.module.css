@@ -5,14 +5,55 @@
   padding: 16px;
   box-sizing: border-box;
   width: 100%;
-  /* add outer margin so cards are not tightly packed in grid/list layouts */
   margin: 12px 0;
   display: flex;
   flex-direction: column;
-  height: 100%; /* fill the grid cell so cards are uniform */
-  /* allow cards to be content-dependent but with minimal height */
+  height: 100%;
   min-height: 200px;
-  overflow: visible; /* allow portrait overhang to show */
+  overflow: visible;
+}
+
+/* Card content styles */
+.cardTitle {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.2;
+}
+
+.cardDescription {
+  margin: 0;
+  flex: 1 1 auto;
+  line-height: 1.5;
+}
+
+.cardLink {
+  background-color: var(--digital-yellow);
+  color: var(--foundation-black);
+  text-decoration: none;
+  padding: 10px 16px;
+  border: 3px solid var(--foundation-black);
+  box-shadow: 4px 4px 0px var(--foundation-black);
+  display: inline-block;
+  font-weight: 600;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cardLink:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--foundation-black);
+}
+
+.cardLink:focus {
+  outline: 3px solid var(--digital-yellow);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardLink {
+    transition: none;
+  }
 }
 
 /* Person card: 2-column grid layout */

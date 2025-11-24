@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import cardStyles from '../styles/card.module.css';
 import timelineStyles from '../styles/timeline.module.css';
@@ -51,11 +51,15 @@ export default function TimelineScroller() {
 	const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
 	const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+	const handleCardClick = useCallback((index: number) => {
+		setExpandedIndex(prev => prev === index ? null : index);
+	}, []);
+
 	useEffect(() => {
 		const observerOptions = {
 			root: null,
 			rootMargin: '0px',
-			threshold: 0.2 // Trigger when 20% of the item is visible
+			threshold: 0.2
 		};
 
 		const observer = new IntersectionObserver((entries) => {
@@ -76,17 +80,15 @@ export default function TimelineScroller() {
 		};
 	}, []);
 
-	const handleCardClick = (index: number) => {
-		setExpandedIndex(expandedIndex === index ? null : index);
-	};
-
 	return (
 		<div className={timelineStyles.timeline_container}>
 			<div className={timelineStyles.timeline_wrapper}>
 				{timelineItems.map((item, index) => (
 					<div
 						key={index}
-						ref={(el) => (itemRefs.current[index] = el)}
+						ref={(el) => {
+							itemRefs.current[index] = el;
+						}}
 						data-index={index}
 						className={`${timelineStyles.timeline_item} ${
 							index % 2 === 0 ? timelineStyles.left : timelineStyles.right
