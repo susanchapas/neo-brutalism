@@ -9,7 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .skip-link {
@@ -85,6 +84,7 @@
 @media (max-width: 639px) {
   .header {
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .hamburger {
