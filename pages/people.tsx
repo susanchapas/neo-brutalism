@@ -55,15 +55,22 @@ export default function People() {
         <div
           style={{
             maxWidth: '900px',
-            margin: '0 auto 32px',
+            margin: '0 auto',
             color: 'var(--foundation-black)',
-            textAlign: 'center',
+            textAlign: 'left',
           }}
         >
-          <p style={{ margin: 0 }}>
+          <p style={{ margin: 0, fontFamily: 'var(--body-font)', fontSize: '1.2rem', lineHeight: '1.6' }}>
             A selection of designers, architects, and thinkers who influenced
             the Neo‑Brutalism approach — advocates of raw materials, strict
-            grids, and direct, unapologetic design language.
+            grids, and direct, unapologetic design language. Their work
+            foregrounds process and construction: surfaces are left honest,
+            joins and structure are visible, and ornament is traded for
+            functional clarity. Together these profiles show how typographic
+            systems, material decisions, and thoughtful constraints produce
+            work that is both rigorous and expressive. Explore each card to
+            see selected projects and further reading on how their methods can
+            inform modern design practice.
           </p>
         </div>
         <section aria-labelledby="people-heading">

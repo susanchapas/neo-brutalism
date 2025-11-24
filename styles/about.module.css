@@ -19,6 +19,13 @@
   line-height: 1.6;
 }
 
+.overview p {
+  font-family: var(--body-font);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 @media (min-width: 768px) {
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
