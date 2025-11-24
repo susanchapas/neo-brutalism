@@ -2,7 +2,7 @@
   border: 4px solid var(--foundation-black);
   box-shadow: 10px 10px 0px var(--foundation-black);
   background-color: var(--paper-white);
-  padding: 18px;
+  padding: 16px;
   box-sizing: border-box;
   width: 100%;
   /* add outer margin so cards are not tightly packed in grid/list layouts */
@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   height: 100%; /* fill the grid cell so cards are uniform */
-  /* make cards taller so person profiles are more prominent */
-  min-height: 320px;
+  /* allow cards to be content-dependent but with minimal height */
+  min-height: 200px;
   overflow: visible; /* allow portrait overhang to show */
 }
 
@@ -205,7 +205,7 @@
   .neo_brutalist_card {
     aspect-ratio: auto;
     min-height: 0;
-    padding: 14px;
+    padding: 12px;
     /* Prevent card overhangs (portraits / shadows) from overlapping footer on small screens */
     overflow: hidden;
     box-shadow: 6px 6px 0px var(--foundation-black);

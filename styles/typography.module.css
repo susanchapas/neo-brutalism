@@ -3,7 +3,7 @@
   /* make the large header responsive and avoid heavy negative tracking that causes overlap */
   font-size: clamp(3rem, 12vw, 8rem);
   /* tighter letter-spacing to make text narrower */
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
   font-family: var(--h1-font);
   line-height: 0.95;
   text-transform: uppercase;

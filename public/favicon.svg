@@ -1,0 +1,13 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#FFEB00"/>
+  
+  <!-- Shadow effect -->
+  <rect x="6" y="6" width="20" height="20" fill="#000000"/>
+  
+  <!-- Main shape -->
+  <rect x="4" y="4" width="20" height="20" fill="#0050FF" stroke="#000000" stroke-width="2"/>
+  
+  <!-- Inner accent -->
+  <rect x="10" y="10" width="8" height="8" fill="#A300FF" stroke="#000000" stroke-width="1.5"/>
+</svg>

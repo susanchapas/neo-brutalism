@@ -45,13 +45,17 @@
   font-family: var(--font-anton);
   text-transform: uppercase;
   margin-bottom: 0.8rem; /* add breathing room between buttons */
-  letter-spacing: -0.05em;
-  font-stretch: 75%;
+  letter-spacing: 0.15em;
+  font-stretch: 100%;
 }
 
 .active, .accordionButton:hover {
   transform: translate(2px, 2px);
   box-shadow: 3px 3px 0px var(--foundation-black);
+}
+
+.active {
+  background-color: var(--digital-yellow);
 }
 
 .accordionPanel {

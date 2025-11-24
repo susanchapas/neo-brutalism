@@ -28,7 +28,6 @@ export default function Home() {
           This style prioritizes functionality and transparency over conventional "beauty." The seams are exposed, the code is visible, and the system is operating at full capacity. The goal is clarity through chaos.
         </p>
         <section>
-          <h2 className={typoStyles.subheader}>Sample Neo-Brutalist Sites</h2>
           <div className={gridStyles.homeGrid}>
             <AccessibleCard bgVar="--digital-yellow" title="FIGMA - SITE SAMPLE" description="Figma is a collaborative interface design tool that embodies Neo-Brutalist principles in its raw, functional design." link="https://figma.com" />
             <AccessibleCard bgVar="--system-blue" title="GUMROAD - SITE SAMPLE" description="Gumroad is a platform for creators to sell digital products, featuring a direct, no-nonsense approach to e-commerce." link="https://gumroad.com" />

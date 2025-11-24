@@ -56,8 +56,9 @@ export default function People() {
         <div
           style={{
             maxWidth: '900px',
-            marginBottom: '32px',
+            margin: '0 auto 32px',
             color: 'var(--foundation-black)',
+            textAlign: 'center',
           }}
         >
           <p style={{ margin: 0 }}>

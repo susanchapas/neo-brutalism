@@ -10,12 +10,12 @@ export default function GlitchedHeader({ text }: GlitchedHeaderProps) {
     /* Outer wrapper is full-width so the yellow background can span the viewport.
        The headline itself is wrapped in the site's centered `.layout` so the
        text remains constrained while the color block stays full-bleed. */
-    <div style={{ position: 'relative', marginBottom: '2rem' }}>
+    <div style={{ position: 'relative', marginBottom: '2rem', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
       <div style={{
         position: 'absolute',
         top: '10px',
-        left: '10px',
-        right: '10px',
+        left: 0,
+        right: 0,
         height: '100%',
         backgroundColor: 'var(--digital-yellow)',
         zIndex: 0,

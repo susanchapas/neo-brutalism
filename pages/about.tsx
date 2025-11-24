@@ -60,12 +60,12 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Protocol Definition - Neo-Brutalism</title>
+        <title>About — Neo-Brutalism</title>
         <meta name="description" content="The rules and principles of Neo-Brutalism design." />
       </Head>
       <Header />
       <main id="main">
-        <GlitchedHeader text="PROTOCOL DEFINITION: THE RULES OF NEO-BRUTALISM" />
+        <GlitchedHeader text="THE RULES OF NEO-BRUTALISM" />
 
         <div className={aboutStyles.overview}>
           <p>This page outlines the core principles of Neo-Brutalism, a design philosophy that prioritizes raw functionality, unapologetic aesthetics, and a rejection of minimalist trends. The following sections define the rules for color, layout, typography, and more.</p>

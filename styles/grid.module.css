@@ -8,10 +8,12 @@
 /* Home: two cards side-by-side on medium+ screens */
 .homeGrid {
   display: grid;
-  gap: 4rem; /* larger breathing room between cards */
+  gap: 2rem; /* moderate breathing room between cards */
   grid-template-columns: 1fr;
   /* responsive bottom margin: small on desktop, larger on small viewports */
   margin-bottom: clamp(1rem, 6vw, 4rem);
+  /* Ensure cards stretch to equal height */
+  align-items: stretch;
 }
 @media (min-width: 700px) {
   .homeGrid {
