@@ -32,7 +32,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://susanchapas.github.io/neo-brutalism/og-image.png"
+          content="https://susanchapas.github.io/neo-brutalism/og-image.svg"
         />
 
         {/* Twitter */}
@@ -44,7 +44,7 @@ export default function Home() {
         />
         <meta
           name="twitter:image"
-          content="https://susanchapas.github.io/neo-brutalism/og-image.png"
+          content="https://susanchapas.github.io/neo-brutalism/og-image.svg"
         />
 
         <link
