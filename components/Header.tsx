@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import styles from '../styles/header.module.css'
 import navStyles from '../styles/nav.module.css'
@@ -14,9 +14,9 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setIsMenuOpen(false)
-  }
+  }, [])
 
   // Close menu on Escape key
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Header() {
 
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
-  }, [isMenuOpen])
+  }, [isMenuOpen, closeMenu])
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function Header() {
 
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [isMenuOpen])
+  }, [isMenuOpen, closeMenu])
 
   return (
     <header className={styles.header} role="banner">
@@ -60,6 +60,7 @@ export default function Header() {
         </Link>
       </div>
       <button
+        type="button"
         ref={buttonRef}
         className={styles.hamburger}
         onClick={toggleMenu}

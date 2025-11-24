@@ -2,6 +2,15 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import Header from '../components/Header'
 
 describe('Header Hamburger Menu', () => {
+  test('hamburger button has correct type attribute', () => {
+    render(<Header />)
+    const button = screen.getByRole('button', {
+      name: /toggle navigation menu/i,
+    })
+
+    expect(button).toHaveAttribute('type', 'button')
+  })
+
   test('hamburger button has correct ARIA attributes when closed', () => {
     render(<Header />)
     const button = screen.getByRole('button', {
