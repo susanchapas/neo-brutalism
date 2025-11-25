@@ -9,7 +9,7 @@ const timelineItems = [
 		title: 'Brutalist Architecture Origins',
 		description:
 			'Emerging from post-war modernism, this architectural style embraced raw, exposed concrete (béton brut), massive forms, and a stark, functionalist approach. It valued honesty of materials over ornamentation.',
-		image: '/images/brutalism.jpg',
+		image: '/neo-brutalism/images/Architecture.svg',
 		pullQuote: 'Honesty of materials, above all.',
 	},
 	{
@@ -17,7 +17,7 @@ const timelineItems = [
 		title: 'Swiss Typography Influence',
 		description:
 			'The International Typographic Style, with its clean, grid-based layouts and sans-serif fonts like Helvetica, brought a sense of order and objectivity that contrasts with and informs neo-brutalism\'s structured chaos.',
-		image: '/images/swiss-typography.jpg',
+		image: '/neo-brutalism/images/Typography.svg',
 		pullQuote: 'Order in chaos.',
 	},
 	{
@@ -25,7 +25,7 @@ const timelineItems = [
 		title: 'Early Web and Browser Defaults',
 		description:
 			'A raw, unstyled digital landscape defined by Times New Roman, blue hyperlinks, and basic HTML tables. This era\'s unpolished, "anything goes" aesthetic is a key spiritual predecessor to neo-brutalism.',
-		image: '/images/early-web.jpg',
+		image: '/neo-brutalism/images/Web Defaults.svg',
 		pullQuote: 'The beauty of the unstyled.',
 	},
 	{
@@ -33,7 +33,7 @@ const timelineItems = [
 		title: 'Skeuomorphism to Flat Design',
 		description:
 			'The design world swung from hyper-realistic interfaces to minimalist, two-dimensional styles. Neo-brutalism reacts to the perceived sterility of flat design by reintroducing texture, weight, and a raw, handmade feel.',
-		image: '/images/flat-design.jpg',
+		image: '/neo-brutalism/images/Texture.svg',
 		pullQuote: 'A rebellion against flat.',
 	},
 	{
@@ -41,7 +41,7 @@ const timelineItems = [
 		title: 'Rise of Figma and Gumroad',
 		description:
 			'Platforms like Figma and Gumroad empower creators with direct-to-audience tools, fostering a design ethos that is raw, functional, and unapologetic. Their bold typography and high-contrast UIs are hallmarks of modern neo-brutalism.',
-		image: '/images/figma-gumroad.jpg',
+		image: '/neo-brutalism/images/Figma and Gumroad.svg',
 		pullQuote: 'The creator economy\'s aesthetic.',
 	},
 ];
@@ -95,13 +95,7 @@ export default function TimelineScroller() {
 						} ${visibleItems.has(index) ? timelineStyles.visible : ''}`}
 					>
 						<div className={timelineStyles.timeline_dot}></div>
-						<button
-							type="button"
-							className={timelineStyles.timeline_item_content}
-							onClick={() => handleCardClick(index)}
-							aria-expanded={expandedIndex === index}
-							aria-controls={`expanded-${index}`}
-						>
+						<div className={timelineStyles.timeline_item_content}>
 							<article
 								className={`${cardStyles.neo_brutalist_card} ${
 									expandedIndex === index ? timelineStyles.expanded : ''
@@ -127,6 +121,15 @@ export default function TimelineScroller() {
 								</time>
 								<h3 style={{ margin: 0, fontSize: 'clamp(1.05rem, 1rem + 0.8vw, 1.25rem)', lineHeight: '1.2' }}>{item.title}</h3>
 								<p style={{ margin: 0, fontSize: 'clamp(0.9rem, 0.85rem + 0.4vw, 1rem)', lineHeight: '1.5' }}>{item.description}</p>
+								<button
+									type="button"
+									className={timelineStyles.learn_more_button}
+									onClick={() => handleCardClick(index)}
+									aria-expanded={expandedIndex === index}
+									aria-controls={`expanded-${index}`}
+								>
+									{expandedIndex === index ? 'Show Less' : 'Show More'}
+								</button>
 								{expandedIndex === index && (
 									<div
 										id={`expanded-${index}`}
@@ -150,7 +153,7 @@ export default function TimelineScroller() {
 									</div>
 								)}
 							</article>
-						</button>
+						</div>
 					</div>
 				))}
 			</div>
