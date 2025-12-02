@@ -1,1 +1,12 @@
-npx lint-staged
+#!/bin/sh
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+	. "$HOME/.nvm/nvm.sh"
+elif [ -n "$NVM_DIR" ] && [ -s "$NVM_DIR/nvm.sh" ]; then
+	. "$NVM_DIR/nvm.sh"
+fi
+
+if [ -x "./node_modules/.bin/lint-staged" ]; then
+	exec ./node_modules/.bin/lint-staged
+else
+	exec npx lint-staged
+fi
