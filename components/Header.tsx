@@ -1,7 +1,5 @@
-"use client"
-
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styles from '../styles/header.module.css'
 import navStyles from '../styles/nav.module.css'
@@ -10,7 +8,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
-  const pathname = usePathname()
+  const { pathname } = useRouter()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -83,22 +81,42 @@ export default function Header() {
       >
         <ul className={styles.navList}>
           <li>
-            <Link href="/" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/' ? 'page' : undefined}>
+            <Link
+              href="/"
+              className={navStyles.nav_link}
+              onClick={closeMenu}
+              aria-current={pathname === '/' ? 'page' : undefined}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/about' ? 'page' : undefined}>
+            <Link
+              href="/about"
+              className={navStyles.nav_link}
+              onClick={closeMenu}
+              aria-current={pathname === '/about' ? 'page' : undefined}
+            >
               About
             </Link>
           </li>
           <li>
-            <Link href="/timeline" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/timeline' ? 'page' : undefined}>
+            <Link
+              href="/timeline"
+              className={navStyles.nav_link}
+              onClick={closeMenu}
+              aria-current={pathname === '/timeline' ? 'page' : undefined}
+            >
               Timeline
             </Link>
           </li>
           <li>
-            <Link href="/people" className={navStyles.nav_link} onClick={closeMenu} aria-current={pathname === '/people' ? 'page' : undefined}>
+            <Link
+              href="/people"
+              className={navStyles.nav_link}
+              onClick={closeMenu}
+              aria-current={pathname === '/people' ? 'page' : undefined}
+            >
               People
             </Link>
           </li>

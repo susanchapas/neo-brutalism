@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
-const basePath = process.env.BASE_PATH !== undefined
-  ? process.env.BASE_PATH
-  : (process.env.NODE_ENV === 'production' ? '/neo-brutalism' : '')
+const basePath =
+  process.env.BASE_PATH !== undefined
+    ? process.env.BASE_PATH
+    : process.env.NODE_ENV === 'production'
+      ? '/neo-brutalism'
+      : ''
 
 const nextConfig = {
   reactStrictMode: true,
@@ -19,9 +22,15 @@ const nextConfig = {
   swcMinify: true,
   productionBrowserSourceMaps: false,
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production' ? {
-      exclude: ['error', 'warn'],
-    } : false,
+    removeConsole:
+      process.env.NODE_ENV === 'production'
+        ? {
+            exclude: ['error', 'warn'],
+          }
+        : false,
+  },
+  experimental: {
+    optimizeCss: true,
   },
 }
 

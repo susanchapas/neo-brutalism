@@ -26,19 +26,27 @@
     ]
   },
   "dependencies": {
+    "critters": "^0.0.23",
     "next": "^13.5.11",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
+  "browserslist": [
+    "chrome >= 80",
+    "edge >= 80",
+    "firefox >= 78",
+    "safari >= 14"
+  ],
   "devDependencies": {
     "@axe-core/puppeteer": "latest",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "latest",
     "@types/jest": "latest",
     "@types/react": "19.2.3",
+    "@typescript-eslint/parser": "^8.48.1",
     "axe-core": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^13.5.11",
     "eslint-plugin-jsx-a11y": "latest",
     "husky": "latest",
     "identity-obj-proxy": "^3.0.0",

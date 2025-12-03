@@ -1,5 +1,6 @@
 const nextPlugin = require("@next/eslint-plugin-next");
 const jsxA11y = require("eslint-plugin-jsx-a11y");
+const tsParser = require("@typescript-eslint/parser");
 
 module.exports = [
   {
@@ -7,6 +8,16 @@ module.exports = [
   },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
     plugins: {
       "@next/next": nextPlugin,
       "jsx-a11y": jsxA11y,

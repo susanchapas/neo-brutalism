@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import cardStyles from '../styles/card.module.css'
 
 interface Person {
@@ -14,10 +15,7 @@ type Props = {
   isListing?: boolean
 }
 
-export default function PersonProfile({
-  person,
-  isListing = false,
-}: Props) {
+export default function PersonProfile({ person, isListing = false }: Props) {
   const textColor = 'var(--foundation-black)'
 
   const idSlug = person.name.replace(/\s+/g, '-')
@@ -31,10 +29,12 @@ export default function PersonProfile({
       }}
     >
       <div className={cardStyles.personImageCol}>
-        <img
+        <Image
           className={cardStyles.personPortrait}
           src={encodeURI(person.image)}
           alt={`Portrait of ${person.name}`}
+          width={200}
+          height={200}
         />
       </div>
 

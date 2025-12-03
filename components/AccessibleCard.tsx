@@ -6,7 +6,11 @@ interface AccessibleCardProps {
   link: string
 }
 
-export default function AccessibleCard({ title, description, link }: AccessibleCardProps) {
+export default function AccessibleCard({
+  title,
+  description,
+  link,
+}: AccessibleCardProps) {
   const id = `card-${title.replace(/\s+/g, '-').toLowerCase()}`
   const textColor = 'var(--foundation-black)'
 
@@ -19,17 +23,14 @@ export default function AccessibleCard({ title, description, link }: AccessibleC
         backgroundColor: 'var(--paper-white)',
         color: textColor,
         gap: '12px',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
       }}
-      tabIndex={0}
     >
-      <h2 id={id} className={cardStyles.cardTitle}>{title}</h2>
+      <h2 id={id} className={cardStyles.cardTitle}>
+        {title}
+      </h2>
       <p className={cardStyles.cardDescription}>{description}</p>
-      <a 
-        href={link} 
-        rel="noopener noreferrer" 
-        className={cardStyles.cardLink}
-      >
+      <a href={link} rel="noopener noreferrer" className={cardStyles.cardLink}>
         Visit Site
       </a>
     </article>

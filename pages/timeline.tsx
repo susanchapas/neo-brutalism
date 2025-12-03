@@ -9,11 +9,15 @@ export default function Timeline() {
     <>
       <Head>
         <title>Timeline - Neo-Brutalism</title>
-        <meta name="description" content="Chronological development of Neo-Brutalism design." />
+        <meta
+          name="description"
+          content="Chronological development of Neo-Brutalism design."
+        />
       </Head>
       <Header />
       <main id="main" style={{ padding: 'var(--page-padding)' }}>
         <GlitchedHeader text="TIMELINE" />
+        <h2 className="visually-hidden">Historical Timeline Events</h2>
         <TimelineScroller />
       </main>
       <Footer />

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from '../styles/footer-decor.module.css'
 
 export default function FooterDecor() {
@@ -5,7 +6,14 @@ export default function FooterDecor() {
 
   return (
     <div className={styles.decorContainer} aria-hidden="true">
-      <img src={src} alt="" className={styles.decorImage} role="presentation" />
+      <Image
+        src={src}
+        alt=""
+        className={styles.decorImage}
+        role="presentation"
+        width={1200}
+        height={200}
+      />
     </div>
   )
 }
